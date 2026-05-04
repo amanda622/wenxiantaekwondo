@@ -1175,6 +1175,9 @@
     .form-row { grid-template-columns: 1fr; }
     .hero-stats { position: static; margin-top: 3rem; justify-content: flex-start; }
   }
+  @media (max-width: 600px) {
+    .video-grid { grid-template-columns: 1fr !important; }
+  }
 </style>
 </head>
 <body>
@@ -1522,6 +1525,29 @@
     <img src="7.jpeg" style="width:100%; display:block; margin-bottom:8px; border-radius:2px; break-inside:avoid;" loading="lazy">
     <img src="8.jpeg" style="width:100%; display:block; margin-bottom:8px; border-radius:2px; break-inside:avoid;" loading="lazy">
     <img src="9.jpeg" style="width:100%; display:block; margin-bottom:8px; border-radius:2px; break-inside:avoid;" loading="lazy">
+  </div>
+</section>
+
+<!-- VIDEOS -->
+<section style="background:var(--black); padding:5rem 4rem;">
+  <div class="fade-in">
+    <p class="section-label">Video · 视频</p>
+    <h2 class="section-title">I AKTION</h2>
+    <div class="divider"></div>
+  </div>
+  <div class="video-grid" style="display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-top:2rem;">
+    <video controls playsinline preload="metadata" style="width:100%; border-radius:4px; display:block; background:#111;">
+      <source src="sd1731302124_2.mp4" type="video/mp4">
+    </video>
+    <video controls playsinline preload="metadata" style="width:100%; border-radius:4px; display:block; background:#111;">
+      <source src="IMG_8698.mov" type="video/mp4">
+    </video>
+    <video controls playsinline preload="metadata" style="width:100%; border-radius:4px; display:block; background:#111;">
+      <source src="IMG_6989.mov" type="video/mp4">
+    </video>
+    <video controls playsinline preload="metadata" style="width:100%; border-radius:4px; display:block; background:#111;">
+      <source src="IMG_1919.mov" type="video/mp4">
+    </video>
   </div>
 </section>
 
