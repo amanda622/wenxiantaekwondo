@@ -1572,37 +1572,34 @@
           <div class="reg-form-title">ANMÄLNINGSFORMULÄR · 报名表</div>
           <div class="reg-powered">via Recess.tv</div>
         </div>
-        <div class="reg-form-body">
-          <!-- 
-            IMPORTANT: Replace this form with your actual Recess.tv embed.
-            In Recess.tv dashboard: Settings → Integrations → Copy embed code
-            Then paste the <iframe> or <script> tag here.
-            
-            Example iframe embed:
-            <iframe src="https://app.recess.tv/YOUR_STUDIO/register" 
-                    width="100%" height="600" frameborder="0"></iframe>
-          -->
+        <form class="reg-form-body" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="935c8784-ca8b-4a50-aced-4af5dfdcab0f">
+          <input type="hidden" name="subject" value="Ny anmälan – Wenxian Taekwondo / 新报名">
           <div class="form-row">
             <div class="form-group">
               <label class="form-label">Förnamn · 名</label>
-              <input type="text" class="form-input" placeholder="Erik / 王">
+              <input type="text" class="form-input" name="fornamn" placeholder="Erik / 王">
             </div>
             <div class="form-group">
               <label class="form-label">Efternamn · 姓</label>
-              <input type="text" class="form-input" placeholder="Larsson / 伟">
+              <input type="text" class="form-input" name="efternamn" placeholder="Larsson / 伟">
             </div>
           </div>
           <div class="form-group">
+            <label class="form-label">Ålder · 年龄</label>
+            <input type="number" class="form-input" name="alder" placeholder="t.ex. 10" min="4" max="99">
+          </div>
+          <div class="form-group">
             <label class="form-label">E-post · 电子邮件</label>
-            <input type="email" class="form-input" placeholder="din@email.com">
+            <input type="email" class="form-input" name="email" placeholder="din@email.com">
           </div>
           <div class="form-group">
             <label class="form-label">Telefon · 电话</label>
-            <input type="tel" class="form-input" placeholder="+46 XX XXX XX XX">
+            <input type="tel" class="form-input" name="telefon" placeholder="+46 XX XXX XX XX">
           </div>
           <div class="form-group">
             <label class="form-label">Klass · 课程</label>
-            <select class="form-select">
+            <select class="form-select" name="klass">
               <option value="">Välj klass · 选择课程</option>
               <option>Mini Tigers (4–7 år)</option>
               <option>Junior Warriors (8–15 år)</option>
@@ -1611,21 +1608,21 @@
           </div>
           <div class="form-group">
             <label class="form-label">Erfarenhet · 经验</label>
-            <select class="form-select">
+            <select class="form-select" name="erfarenhet">
               <option value="">Välj nivå · 选择级别</option>
               <option>Nybörjare / 初学者</option>
               <option>Lite erfarenhet / 有一些经验</option>
               <option>Tränat förut / 有训练经历</option>
             </select>
           </div>
-          <button class="form-submit" onclick="alert('Tack! Vi kontaktar dig snart.\n感谢您！我们将尽快联系您。')">
+          <button type="submit" class="form-submit">
             Skicka anmälan · 提交报名
           </button>
           <p class="form-note">
             Gratis provlektion — inga förpliktelser · 免费体验课，无任何承诺<br>
             Frågor? Ring oss: <span style="color:var(--red);">+46 738 430 096</span>
           </p>
-        </div>
+        </form>
       </div>
     </div>
   </div>
