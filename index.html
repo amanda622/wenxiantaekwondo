@@ -1720,7 +1720,7 @@
       <img src="https://img.youtube.com/vi/H-1aqb3YeOc/hqdefault.jpg" loading="lazy" alt="">
       <div class="card-overlay"><div class="card-icon" style="padding-left:4px"><svg width="22" height="22" viewBox="0 0 24 24" fill="#222"><polygon points="5,3 19,12 5,21"/></svg></div></div>
     </div>
-    <div class="media-card video-card" onclick="openVideo('w0hlGzv3Z_Y')">
+    <div class="media-card video-card" onclick="openVideo('w0hlGzv3Z_Y', true)">
       <img src="https://img.youtube.com/vi/w0hlGzv3Z_Y/hqdefault.jpg" loading="lazy" alt="">
       <div class="card-overlay"><div class="card-icon" style="padding-left:4px"><svg width="22" height="22" viewBox="0 0 24 24" fill="#222"><polygon points="5,3 19,12 5,21"/></svg></div></div>
     </div>
@@ -2110,10 +2110,13 @@
 </div>
 
 <script>
-function openVideo(id) {
-  document.getElementById('modal-video-wrap').style.display = 'block';
+function openVideo(id, isShorts) {
+  var wrap = document.getElementById('modal-video-wrap');
+  wrap.style.display = 'block';
+  wrap.style.paddingBottom = isShorts ? '177.78%' : '56.25%';
   document.getElementById('modal-photo-wrap').style.display = 'none';
-  document.getElementById('modal-video-iframe').src = 'https://www.youtube.com/embed/' + id + '?autoplay=1';
+  document.getElementById('modal-video-iframe').src =
+    'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
   document.getElementById('media-modal').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
