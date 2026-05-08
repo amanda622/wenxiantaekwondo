@@ -2112,9 +2112,18 @@
 <script>
 function openVideo(id, isShorts) {
   var wrap = document.getElementById('modal-video-wrap');
+  var inner = document.getElementById('modal-inner');
   wrap.style.display = 'block';
-  wrap.style.paddingBottom = isShorts ? '177.78%' : '56.25%';
   document.getElementById('modal-photo-wrap').style.display = 'none';
+  if (isShorts) {
+    wrap.style.paddingBottom = '0';
+    wrap.style.height = 'min(80vh, 560px)';
+    inner.style.maxWidth = 'calc(min(80vh, 560px) * 9 / 16)';
+  } else {
+    wrap.style.paddingBottom = '56.25%';
+    wrap.style.height = '';
+    inner.style.maxWidth = '920px';
+  }
   document.getElementById('modal-video-iframe').src =
     'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
   document.getElementById('media-modal').classList.add('open');
@@ -2131,6 +2140,8 @@ function closeModal() {
   document.getElementById('media-modal').classList.remove('open');
   document.getElementById('modal-video-iframe').src = '';
   document.getElementById('modal-photo-img').src = '';
+  document.getElementById('modal-video-wrap').style.height = '';
+  document.getElementById('modal-inner').style.maxWidth = '920px';
   document.body.style.overflow = '';
 }
 function handleModalClick(e) {
