@@ -1295,6 +1295,23 @@
     .media-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
     .video-grid { grid-template-columns: 1fr !important; }
   }
+
+  #lang-btn {
+    background: none;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.65);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    padding: 0.4rem 1rem;
+    border-radius: 2px;
+    cursor: pointer;
+    font-family: inherit;
+    text-transform: uppercase;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  #lang-btn:hover { border-color: var(--red); color: var(--red); }
 </style>
 </head>
 <body>
@@ -1303,12 +1320,13 @@
 <nav>
   <a href="#" class="nav-logo">WenXian <span>TKD</span></a>
   <ul class="nav-links">
-    <li><a href="#about">Om oss / 关于我们</a></li>
-    <li><a href="#classes">Klasser / 课程</a></li>
-    <li><a href="#schedule">Schema / 时间表</a></li>
-    <li><a href="#pricing">Priser / 价格</a></li>
-    <li><a href="#register" class="nav-cta">Anmäl dig / 报名</a></li>
+    <li><a href="#about" data-i18n="nav.about">Om oss</a></li>
+    <li><a href="#classes" data-i18n="nav.classes">Klasser</a></li>
+    <li><a href="#schedule" data-i18n="nav.schedule">Schema</a></li>
+    <li><a href="#pricing" data-i18n="nav.pricing">Priser</a></li>
+    <li><a href="#register" class="nav-cta" data-i18n="nav.cta">Anmäl dig</a></li>
   </ul>
+  <button id="lang-btn" onclick="toggleLang()">中文</button>
 </nav>
 
 <!-- HERO -->
@@ -1318,35 +1336,31 @@
   <div class="hero-accent"></div>
 
   <div class="hero-content">
-    <div class="hero-badge">Göteborg, Sverige &nbsp;·&nbsp; 哥德堡 &nbsp;·&nbsp; STF &amp; RF Medlem</div>
+    <div class="hero-badge" data-i18n="hero.badge">Göteborg, Sverige · STF &amp; RF Medlem</div>
     <h1>
       WENXIAN<br>
       <span class="line-red">TAEKWONDO</span>
     </h1>
-    <p class="hero-cn">文 贤 跆 拳 道 协 会</p>
-    <p class="hero-desc">
-      Göteborgbaserad tävlingsklubb för WT/Olympisk Taekwondo — grundad 2021. Vi tränar nästa generations mästare med disciplin, mod och respekt.
-      <br><br>
-      <span style="font-family:'Noto Sans SC',sans-serif; font-size:0.88rem; color:rgba(255,255,255,0.4);">哥德堡竞技跆拳道协会，成立于2021年。专注WT/奥运跆拳道，培育优秀青少年运动员。</span>
-    </p>
+    <p class="hero-cn" data-i18n="hero.cn">文 贤 跆 拳 道 协 会</p>
+    <p class="hero-desc" data-i18n="hero.desc">Göteborgbaserad tävlingsklubb för WT/Olympisk Taekwondo — grundad 2021. Vi tränar nästa generations mästare med disciplin, mod och respekt.</p>
     <div class="hero-buttons">
-      <a href="#register" class="btn-primary">Anmäl dig nu · 立即报名</a>
-      <a href="#classes" class="btn-outline">Våra klasser · 查看课程</a>
+      <a href="#register" class="btn-primary" data-i18n="hero.cta">Anmäl dig nu</a>
+      <a href="#classes" class="btn-outline" data-i18n="hero.classes">Våra klasser</a>
     </div>
   </div>
 
   <div class="hero-stats">
     <div class="stat">
       <div class="stat-num">30<span>+</span></div>
-      <div class="stat-label">Års erfarenhet<br>年经验</div>
+      <div class="stat-label" data-i18n="hero.stat1">Års erfarenhet</div>
     </div>
     <div class="stat">
       <div class="stat-num">100<span>+</span></div>
-      <div class="stat-label">Aktiva elever<br>活跃学员</div>
+      <div class="stat-label" data-i18n="hero.stat2">Aktiva elever</div>
     </div>
     <div class="stat">
       <div class="stat-num">3</div>
-      <div class="stat-label">Klasser<br>课程级别</div>
+      <div class="stat-label" data-i18n="hero.stat3">Klasser</div>
     </div>
   </div>
 </section>
@@ -1359,33 +1373,30 @@
     <div class="about-tag">WT/OLYMPIC<br>TAEKWONDO<br>STF MEDLEM</div>
   </div>
   <div class="fade-in">
-    <p class="section-label">Om oss · 关于我们</p>
-    <h2 class="section-title">TRÄNA MED<br>DE BÄSTA</h2>
+    <p class="section-label" data-i18n="about.label">Om oss</p>
+    <h2 class="section-title" data-i18n-html="about.title">TRÄNA MED<br>DE BÄSTA</h2>
     <div class="divider"></div>
-    <p class="section-subtitle">
-      Wenxian Taekwondo Förening grundades 2021 och är idag en av Göteborgs mest framstående tävlingsklubbar för WT/Olympisk Taekwondo, med nära hundra aktiva medlemmar. Som den <em>första kinesiskledda</em> idrottsföreningen i Sverige som systematiskt tagit sig in i det svenska och europeiska tävlingssystemet är vi stolta STF- och RF-medlemmar.<br><br>
-      <span style="font-family:'Noto Sans SC',sans-serif; font-size:0.88rem; color:rgba(255,255,255,0.4);">文贤跆拳道协会成立于2021年，现已发展为哥德堡最具影响力的青少年竞技跆拳道机构之一，学员近百人。作为瑞典首个由华人创立并持续进入欧洲竞技体系的非营利体育协会，协会为STF与RF正式成员。</span>
-    </p>
+    <p class="section-subtitle" data-i18n-html="about.text">Wenxian Taekwondo Förening grundades 2021 och är idag en av Göteborgs mest framstående tävlingsklubbar för WT/Olympisk Taekwondo, med nära hundra aktiva medlemmar. Som den <em>första kinesiskledda</em> idrottsföreningen i Sverige som systematiskt tagit sig in i det svenska och europeiska tävlingssystemet är vi stolta STF- och RF-medlemmar.</p>
     <div class="about-values">
       <div class="about-value">
         <div class="value-icon">🎯</div>
         <div>
-          <div class="value-title">Disciplin · 纪律</div>
-          <div class="value-desc">Vi lär ut mer än sparkar och slag — vi bygger karaktär och självdisciplin som varar livet ut.</div>
+          <div class="value-title" data-i18n="about.val1.title">Disciplin</div>
+          <div class="value-desc" data-i18n="about.val1.desc">Vi lär ut mer än sparkar och slag — vi bygger karaktär och självdisciplin som varar livet ut.</div>
         </div>
       </div>
       <div class="about-value">
         <div class="value-icon">🤝</div>
         <div>
-          <div class="value-title">Respekt · 尊重</div>
-          <div class="value-desc">Respekt för sig själv, sina träningskamrater och sina instruktörer är grunden i vår träning.</div>
+          <div class="value-title" data-i18n="about.val2.title">Respekt</div>
+          <div class="value-desc" data-i18n="about.val2.desc">Respekt för sig själv, sina träningskamrater och sina instruktörer är grunden i vår träning.</div>
         </div>
       </div>
       <div class="about-value">
         <div class="value-icon">⚡</div>
         <div>
-          <div class="value-title">Excellens · 卓越</div>
-          <div class="value-desc">Huvudtränare med Kukkiwon 4:e dan, f.d. kinesisk specialstyrka, och lärjunge till "kinesiska taekwondons fader" Yu Guosen (9:e dan). Sedan 1994.</div>
+          <div class="value-title" data-i18n="about.val3.title">Excellens</div>
+          <div class="value-desc" data-i18n="about.val3.desc">Huvudtränare med Kukkiwon 4:e dan, f.d. kinesisk specialstyrka, och lärjunge till "kinesiska taekwondons fader" Yu Guosen (9:e dan). Sedan 1994.</div>
         </div>
       </div>
     </div>
@@ -1396,99 +1407,92 @@
 <section class="classes" id="classes">
   <div class="fade-in" style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:1.5rem;">
     <div>
-      <p class="section-label">Klasser · 课程</p>
-      <h2 class="section-title">HITTA DIN<br>KLASS</h2>
+      <p class="section-label" data-i18n="classes.label">Klasser</p>
+      <h2 class="section-title" data-i18n-html="classes.title">HITTA DIN<br>KLASS</h2>
     </div>
-    <p style="font-size:0.88rem; color:var(--gray); max-width:300px; text-align:right;">
-      Alla nivåer välkomna — från nybörjare till tävlare.<br>
-      <span style="font-family:'Noto Sans SC',sans-serif; font-size:0.82rem;">所有级别均欢迎，从初学者到竞技选手。</span>
-    </p>
+    <p style="font-size:0.88rem; color:var(--gray); max-width:300px; text-align:right;" data-i18n="classes.note">Alla nivåer välkomna — från nybörjare till tävlare.</p>
   </div>
 
   <div class="classes-grid fade-in">
     <div class="class-card">
-      <span class="class-age">5 – 7 år · 5-7岁</span>
-      <h3 class="class-name">MINI<br>KLASS</h3>
-      <p class="class-cn">儿 童 班</p>
-      <p class="class-desc">Lekfull och säker introduktion till taekwondo. Barnen lär sig grundrörelser, balans, koordination och respekt i en trygg miljö.<br><br>
-      <span style="font-family:'Noto Sans SC',sans-serif; font-size:0.82rem; color:rgba(255,255,255,0.35);">以游戏方式学习基础动作、平衡与协调，建立纪律与尊重。</span></p>
+      <span class="class-age" data-i18n="class.mini.age">5 – 7 år</span>
+      <h3 class="class-name" data-i18n-html="class.mini.name">MINI<br>KLASS</h3>
+      <p class="class-cn" data-i18n="class.mini.cn">儿 童 班</p>
+      <p class="class-desc" data-i18n="class.mini.desc">Lekfull och säker introduktion till taekwondo. Barnen lär sig grundrörelser, balans, koordination och respekt i en trygg miljö.</p>
       <div class="class-details">
         <div class="class-detail">
-          <span class="class-detail-label">Tid · 时间</span>
+          <span class="class-detail-label" data-i18n="label.time">Tid</span>
           <span class="class-detail-val">60 min / pass</span>
         </div>
         <div class="class-detail">
-          <span class="class-detail-label">Dagar · 日期</span>
-          <span class="class-detail-val">Tis, Fre, Lör · 周二, 五, 六</span>
+          <span class="class-detail-label" data-i18n="label.days">Dagar</span>
+          <span class="class-detail-val" data-i18n="class.mini.days">Tis, Fre, Lör</span>
         </div>
         <div class="class-detail">
-          <span class="class-detail-label">Nivå · 级别</span>
-          <span class="class-detail-val">Nybörjare · 初学</span>
+          <span class="class-detail-label" data-i18n="label.level">Nivå</span>
+          <span class="class-detail-val" data-i18n="class.mini.level">Nybörjare</span>
         </div>
       </div>
     </div>
 
     <div class="class-card">
-      <span class="class-age">8 – 11 år · 8-11岁</span>
-      <h3 class="class-name">JUNIOR<br>KLASS</h3>
-      <p class="class-cn">儿 童 进 阶 班</p>
-      <p class="class-desc">Teknisk sparkteknik, grundläggande taktik och tävlingsförberedelse. Fokus på att bygga stark grund för vidare tävlingskarriär.<br><br>
-      <span style="font-family:'Noto Sans SC',sans-serif; font-size:0.82rem; color:rgba(255,255,255,0.35);">技术踢击、基础战术与竞技准备，为将来的比赛生涯打下坚实基础。</span></p>
+      <span class="class-age" data-i18n="class.junior.age">8 – 11 år</span>
+      <h3 class="class-name" data-i18n-html="class.junior.name">JUNIOR<br>KLASS</h3>
+      <p class="class-cn" data-i18n="class.junior.cn">儿 童 进 阶 班</p>
+      <p class="class-desc" data-i18n="class.junior.desc">Teknisk sparkteknik, grundläggande taktik och tävlingsförberedelse. Fokus på att bygga stark grund för vidare tävlingskarriär.</p>
       <div class="class-details">
         <div class="class-detail">
-          <span class="class-detail-label">Tid · 时间</span>
+          <span class="class-detail-label" data-i18n="label.time">Tid</span>
           <span class="class-detail-val">60 min / pass</span>
         </div>
         <div class="class-detail">
-          <span class="class-detail-label">Dagar · 日期</span>
-          <span class="class-detail-val">Ons, Fre, Lör · 周三, 五, 六</span>
+          <span class="class-detail-label" data-i18n="label.days">Dagar</span>
+          <span class="class-detail-val" data-i18n="class.junior.days">Ons, Fre, Lör</span>
         </div>
         <div class="class-detail">
-          <span class="class-detail-label">Nivå · 级别</span>
-          <span class="class-detail-val">Alla nivåer · 各级别</span>
+          <span class="class-detail-label" data-i18n="label.level">Nivå</span>
+          <span class="class-detail-val" data-i18n="class.junior.level">Alla nivåer</span>
         </div>
       </div>
     </div>
 
     <div class="class-card">
-      <span class="class-age">12+ & Vuxna · 12岁以上&成人</span>
-      <h3 class="class-name">UNGDOM &<br>VUXEN</h3>
-      <p class="class-cn">青 少 年 & 成 人 班</p>
-      <p class="class-desc">Taekwondo, kondition och Kickboxing för ungdomar och vuxna. Träna tävlingsteknik eller kom för en aktiv och rolig träning.<br><br>
-      <span style="font-family:'Noto Sans SC',sans-serif; font-size:0.82rem; color:rgba(255,255,255,0.35);">面向12岁以上及成人的跆拳道、综合体能与Kickboxing课程，竞技与健身两相宜。</span></p>
+      <span class="class-age" data-i18n="class.youth.age">12+ &amp; Vuxna</span>
+      <h3 class="class-name" data-i18n-html="class.youth.name">UNGDOM &amp;<br>VUXEN</h3>
+      <p class="class-cn" data-i18n="class.youth.cn">青 少 年 & 成 人 班</p>
+      <p class="class-desc" data-i18n="class.youth.desc">Taekwondo, kondition och Kickboxing för ungdomar och vuxna. Träna tävlingsteknik eller kom för en aktiv och rolig träning.</p>
       <div class="class-details">
         <div class="class-detail">
-          <span class="class-detail-label">Tid · 时间</span>
+          <span class="class-detail-label" data-i18n="label.time">Tid</span>
           <span class="class-detail-val">60–90 min / pass</span>
         </div>
         <div class="class-detail">
-          <span class="class-detail-label">Dagar · 日期</span>
-          <span class="class-detail-val">Mån, Tor, Fre, Lör, Sön</span>
+          <span class="class-detail-label" data-i18n="label.days">Dagar</span>
+          <span class="class-detail-val" data-i18n="class.youth.days">Mån, Tor, Fre, Lör, Sön</span>
         </div>
         <div class="class-detail">
-          <span class="class-detail-label">Nivå · 级别</span>
-          <span class="class-detail-val">Alla nivåer · 各级别</span>
+          <span class="class-detail-label" data-i18n="label.level">Nivå</span>
+          <span class="class-detail-val" data-i18n="class.youth.level">Alla nivåer</span>
         </div>
       </div>
     </div>
     <div class="class-card" style="border-color:rgba(200,0,26,0.4); background:rgba(200,0,26,0.04);">
-      <span class="class-age" style="background:rgba(200,0,26,0.25); border-color:rgba(200,0,26,0.6); color:#ff4d6a;">Tävlande · 竞技选手</span>
-      <h3 class="class-name">TÄVLINGS-<br>KLASS</h3>
-      <p class="class-cn">竞 技 班</p>
-      <p class="class-desc">Systematisk tävlingsträning för klubbens utvalda atleter. Matchförberedelse, videogenomgång och europeiska tävlingar.<br><br>
-      <span style="font-family:'Noto Sans SC',sans-serif; font-size:0.82rem; color:rgba(255,255,255,0.35);">系统化竞技训练，参加瑞典及欧洲正规锦标赛。含尖子班（限额3人）。</span></p>
+      <span class="class-age" style="background:rgba(200,0,26,0.25); border-color:rgba(200,0,26,0.6); color:#ff4d6a;" data-i18n="class.elite.age">Tävlande</span>
+      <h3 class="class-name" data-i18n-html="class.elite.name">TÄVLINGS-<br>KLASS</h3>
+      <p class="class-cn" data-i18n="class.elite.cn">竞 技 班</p>
+      <p class="class-desc" data-i18n="class.elite.desc">Systematisk tävlingsträning för klubbens utvalda atleter. Matchförberedelse, videogenomgång och europeiska tävlingar.</p>
       <div class="class-details">
         <div class="class-detail">
-          <span class="class-detail-label">Tid · 时间</span>
+          <span class="class-detail-label" data-i18n="label.time">Tid</span>
           <span class="class-detail-val">90 min / pass</span>
         </div>
         <div class="class-detail">
-          <span class="class-detail-label">Dagar · 日期</span>
-          <span class="class-detail-val">Mån, Lör · 周一, 周六</span>
+          <span class="class-detail-label" data-i18n="label.days">Dagar</span>
+          <span class="class-detail-val" data-i18n="class.elite.days">Mån, Lör</span>
         </div>
         <div class="class-detail">
-          <span class="class-detail-label">Tillträde · 参加资格</span>
-          <span class="class-detail-val" style="color:var(--red);">Utvald av tränaren · 教练选拔</span>
+          <span class="class-detail-label" data-i18n="label.access">Tillträde</span>
+          <span class="class-detail-val" style="color:var(--red);" data-i18n="class.elite.access">Utvald av tränaren</span>
         </div>
       </div>
     </div>
@@ -1499,128 +1503,124 @@
 <section class="schedule" id="schedule">
   <div class="schedule-header fade-in">
     <div>
-      <p class="section-label">Veckans schema · 每周时间表</p>
-      <h2 class="section-title">TRÄNINGS-<br>SCHEMA</h2>
+      <p class="section-label" data-i18n="schedule.label">Veckans schema</p>
+      <h2 class="section-title" data-i18n-html="schedule.title">TRÄNINGS-<br>SCHEMA</h2>
     </div>
-    <a href="#register" class="btn-primary">Boka prova-på · 预约体验课</a>
+    <a href="#register" class="btn-primary" data-i18n="schedule.cta">Boka prova-på</a>
   </div>
 
   <div class="fade-in">
     <table class="schedule-table">
       <thead>
         <tr>
-          <th>Dag · 星期</th>
-          <th>Tid · 时间</th>
-          <th>Klass · 课程</th>
-          <th>Ålder · 年龄</th>
+          <th data-i18n="th.day">Dag</th>
+          <th data-i18n="th.time">Tid</th>
+          <th data-i18n="th.class">Klass</th>
+          <th data-i18n="th.age">Ålder</th>
           <th>Info</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td rowspan="2">MÅNDAG<br><span style="font-family:'Noto Sans SC',sans-serif;font-size:0.75rem;color:var(--gray);">周一</span></td>
+          <td rowspan="2" data-i18n="day.monday">MÅNDAG</td>
           <td>18:00 – 19:30</td>
-          <td><span class="class-pill pill-youth">Tävlingsklass · 竞技班</span></td>
-          <td>Alla tävlande</td>
+          <td><span class="class-pill pill-youth" data-i18n="pill.competition">Tävlingsklass</span></td>
+          <td data-i18n="td.competitors">Alla tävlande</td>
           <td>—</td>
         </tr>
         <tr>
           <td>19:30 – 20:30</td>
-          <td><span class="class-pill pill-adult">Kondition + Kickboxing · 综合体能</span></td>
-          <td>12+ &amp; Vuxna</td>
+          <td><span class="class-pill pill-adult" data-i18n="pill.fitness">Kondition + Kickboxing</span></td>
+          <td data-i18n="age.12plus">12+ &amp; Vuxna</td>
           <td>—</td>
         </tr>
         <tr style="border-top:2px solid rgba(200,0,26,0.2);">
-          <td rowspan="2">TISDAG<br><span style="font-family:'Noto Sans SC',sans-serif;font-size:0.75rem;color:var(--gray);">周二</span></td>
+          <td rowspan="2" data-i18n="day.tuesday">TISDAG</td>
           <td>17:30 – 18:30</td>
-          <td><span class="class-pill pill-kids">Barn · 儿童班</span></td>
-          <td>5 – 7 år</td>
+          <td><span class="class-pill pill-kids" data-i18n="pill.kids">Barn</span></td>
+          <td data-i18n="age.5to7">5 – 7 år</td>
           <td>—</td>
         </tr>
         <tr>
           <td>19:00 – 20:30</td>
-          <td><span class="class-pill pill-youth">Elitgrupp · 尖子班</span></td>
-          <td>Utvalda</td>
+          <td><span class="class-pill pill-youth" data-i18n="pill.elite">Elitgrupp</span></td>
+          <td data-i18n="td.selected">Utvalda</td>
           <td style="font-size:0.78rem;color:rgba(255,255,255,0.45);">Max 3 pers · 200 kr/pass*</td>
         </tr>
         <tr style="border-top:2px solid rgba(200,0,26,0.2);">
-          <td rowspan="2">ONSDAG<br><span style="font-family:'Noto Sans SC',sans-serif;font-size:0.75rem;color:var(--gray);">周三</span></td>
+          <td rowspan="2" data-i18n="day.wednesday">ONSDAG</td>
           <td>18:00 – 19:00</td>
-          <td><span class="class-pill pill-kids">Barn · 儿童班</span></td>
-          <td>8 – 11 år</td>
+          <td><span class="class-pill pill-kids" data-i18n="pill.kids">Barn</span></td>
+          <td data-i18n="age.8to11">8 – 11 år</td>
           <td>—</td>
         </tr>
         <tr>
           <td>19:00 – 20:00</td>
-          <td><span class="class-pill pill-adult">Privatlektioner · 私教课</span></td>
-          <td>Alla</td>
-          <td style="font-size:0.78rem;color:rgba(255,255,255,0.45);">Kontakta oss för bokning</td>
+          <td><span class="class-pill pill-adult" data-i18n="pill.private">Privatlektioner</span></td>
+          <td data-i18n="td.all">Alla</td>
+          <td style="font-size:0.78rem;color:rgba(255,255,255,0.45);" data-i18n="td.contact">Kontakta oss för bokning</td>
         </tr>
         <tr style="border-top:2px solid rgba(200,0,26,0.2);">
-          <td rowspan="2">TORSDAG<br><span style="font-family:'Noto Sans SC',sans-serif;font-size:0.75rem;color:var(--gray);">周四</span></td>
+          <td rowspan="2" data-i18n="day.thursday">TORSDAG</td>
           <td>17:30 – 18:30</td>
-          <td><span class="class-pill pill-adult">Kondition + Kickboxing · 综合体能</span></td>
-          <td>12+ &amp; Vuxna</td>
+          <td><span class="class-pill pill-adult" data-i18n="pill.fitness">Kondition + Kickboxing</span></td>
+          <td data-i18n="age.12plus">12+ &amp; Vuxna</td>
           <td>—</td>
         </tr>
         <tr>
           <td>18:30 – 19:30</td>
-          <td><span class="class-pill pill-youth">Ungdom · 青少年班</span></td>
-          <td>12+ år</td>
+          <td><span class="class-pill pill-youth" data-i18n="pill.youth">Ungdom</span></td>
+          <td data-i18n="age.12">12+ år</td>
           <td>—</td>
         </tr>
         <tr style="border-top:2px solid rgba(200,0,26,0.2);">
-          <td rowspan="2">FREDAG<br><span style="font-family:'Noto Sans SC',sans-serif;font-size:0.75rem;color:var(--gray);">周五</span></td>
+          <td rowspan="2" data-i18n="day.friday">FREDAG</td>
           <td>17:30 – 18:30</td>
-          <td><span class="class-pill pill-kids">Barn · 儿童班</span></td>
-          <td>5 – 7 år</td>
+          <td><span class="class-pill pill-kids" data-i18n="pill.kids">Barn</span></td>
+          <td data-i18n="age.5to7">5 – 7 år</td>
           <td>—</td>
         </tr>
         <tr>
           <td>18:30 – 19:30</td>
-          <td><span class="class-pill pill-kids">Barn + Ungdom · 儿童&amp;青少年</span></td>
-          <td>8 – 11 &amp; 12+</td>
+          <td><span class="class-pill pill-kids" data-i18n="pill.kidsyouth">Barn + Ungdom</span></td>
+          <td data-i18n="age.8to12">8 – 11 &amp; 12+</td>
           <td>—</td>
         </tr>
         <tr style="border-top:2px solid rgba(200,0,26,0.2);">
-          <td rowspan="4">LÖRDAG<br><span style="font-family:'Noto Sans SC',sans-serif;font-size:0.75rem;color:var(--gray);">周六</span></td>
+          <td rowspan="4" data-i18n="day.saturday">LÖRDAG</td>
           <td>15:00 – 16:00</td>
-          <td><span class="class-pill pill-youth">Tävlingsklass (reserv) · 竞技预备队</span></td>
-          <td>Utvalda</td>
+          <td><span class="class-pill pill-youth" data-i18n="pill.reserve">Tävlingsklass (reserv)</span></td>
+          <td data-i18n="td.selected">Utvalda</td>
           <td>—</td>
         </tr>
         <tr>
           <td>16:00 – 17:00</td>
-          <td><span class="class-pill pill-kids">Barn · 儿童班</span></td>
-          <td>5 – 7 år</td>
+          <td><span class="class-pill pill-kids" data-i18n="pill.kids">Barn</span></td>
+          <td data-i18n="age.5to7">5 – 7 år</td>
           <td>—</td>
         </tr>
         <tr>
           <td>17:00 – 18:00</td>
-          <td><span class="class-pill pill-kids">Barn · 儿童班</span></td>
-          <td>8 – 11 år</td>
+          <td><span class="class-pill pill-kids" data-i18n="pill.kids">Barn</span></td>
+          <td data-i18n="age.8to11">8 – 11 år</td>
           <td>—</td>
         </tr>
         <tr>
           <td>18:00 – 19:00</td>
-          <td><span class="class-pill pill-youth">Ungdom · 青少年班</span></td>
-          <td>12+ år</td>
+          <td><span class="class-pill pill-youth" data-i18n="pill.youth">Ungdom</span></td>
+          <td data-i18n="age.12">12+ år</td>
           <td>—</td>
         </tr>
         <tr style="border-top:2px solid rgba(200,0,26,0.2);">
-          <td>SÖNDAG<br><span style="font-family:'Noto Sans SC',sans-serif;font-size:0.75rem;color:var(--gray);">周日</span></td>
+          <td data-i18n="day.sunday">SÖNDAG</td>
           <td>09:00 – 10:00</td>
-          <td><span class="class-pill pill-adult">Mixad klass · 混合课</span></td>
-          <td>Alla · 全员</td>
-          <td style="font-size:0.78rem;color:rgba(255,255,255,0.45);">Öppet för alla</td>
+          <td><span class="class-pill pill-adult" data-i18n="pill.mixed">Mixad klass</span></td>
+          <td data-i18n="age.all">Alla</td>
+          <td style="font-size:0.78rem;color:rgba(255,255,255,0.45);" data-i18n="td.open">Öppet för alla</td>
         </tr>
       </tbody>
     </table>
-    <p style="margin-top:1.2rem; font-size:0.78rem; color:rgba(255,255,255,0.35); font-style:italic;">
-      * Tisdagens elitgrupp: 1 plats gratis (utvalda av tränaren) + 2 frivilliga platser à 200 kr/pass · 
-      周二尖子班：1名免费（教练选拔）+ 2名自愿报名每次200克朗 · 
-      Giltig fr.o.m. 2 juni 2025
-    </p>
+    <p style="margin-top:1.2rem; font-size:0.78rem; color:rgba(255,255,255,0.35); font-style:italic;" data-i18n="schedule.note">* Tisdagens elitgrupp: 1 plats gratis (utvalda av tränaren) + 2 frivilliga platser à 200 kr/pass. Giltig fr.o.m. 2 juni 2025</p>
   </div>
 </section>
 
@@ -1628,8 +1628,8 @@
 <!-- GALLERY -->
 <section style="background:var(--black); padding:5rem 4rem;">
   <div class="fade-in">
-    <p class="section-label">Galleri · 照片集</p>
-    <h2 class="section-title">I TRÄNINGS-<br>SALEN</h2>
+    <p class="section-label" data-i18n="gallery.label">Galleri</p>
+    <h2 class="section-title" data-i18n-html="gallery.title">I TRÄNINGS-<br>SALEN</h2>
     <div class="divider"></div>
   </div>
   <div class="media-grid fade-in">
@@ -1703,8 +1703,8 @@
 <!-- VIDEOS -->
 <section style="background:var(--black); padding:5rem 4rem;">
   <div class="fade-in">
-    <p class="section-label">Video · 视频</p>
-    <h2 class="section-title">I AKTION</h2>
+    <p class="section-label" data-i18n="video.label">Video</p>
+    <h2 class="section-title" data-i18n="video.title">I AKTION</h2>
     <div class="divider"></div>
   </div>
   <div class="media-grid fade-in">
@@ -1731,33 +1731,30 @@
 <section class="registration" id="register">
   <div class="registration-inner">
     <div class="reg-info fade-in">
-      <p class="section-label">Anmälan · 报名</p>
-      <h2 class="section-title">BÖRJA DIN<br>RESA</h2>
+      <p class="section-label" data-i18n="reg.label">Anmälan</p>
+      <h2 class="section-title" data-i18n-html="reg.title">BÖRJA DIN<br>RESA</h2>
       <div class="divider"></div>
-      <p class="section-subtitle">
-        Prova en gratis lektion utan förpliktelser. Fyll i formuläret så kontaktar vi dig inom 24 timmar.<br><br>
-        <span style="font-family:'Noto Sans SC',sans-serif; font-size:0.85rem; color:rgba(255,255,255,0.3);">免费体验一节课，无任何承诺。填写表格后我们将在24小时内联系您。</span>
-      </p>
+      <p class="section-subtitle" data-i18n="reg.subtitle">Prova en gratis lektion utan förpliktelser. Fyll i formuläret så kontaktar vi dig inom 24 timmar.</p>
       <div class="reg-steps">
         <div class="reg-step">
           <div class="step-num">1</div>
           <div class="step-text">
-            <strong>Fyll i formuläret · 填写表格</strong>
-            <p>Ange dina uppgifter och vilken klass du är intresserad av. / 填写您的信息和感兴趣的课程。</p>
+            <strong data-i18n="reg.step1.title">Fyll i formuläret</strong>
+            <p data-i18n="reg.step1.text">Ange dina uppgifter och vilken klass du är intresserad av.</p>
           </div>
         </div>
         <div class="reg-step">
           <div class="step-num">2</div>
           <div class="step-text">
-            <strong>Vi kontaktar dig · 我们联系您</strong>
-            <p>Vår instruktör ringer eller mejlar dig för att boka din provlektion. / 我们的教练将联系您预约体验课。</p>
+            <strong data-i18n="reg.step2.title">Vi kontaktar dig</strong>
+            <p data-i18n="reg.step2.text">Vår instruktör ringer eller mejlar dig för att boka din provlektion.</p>
           </div>
         </div>
         <div class="reg-step">
           <div class="step-num">3</div>
           <div class="step-text">
-            <strong>Börja träna · 开始训练</strong>
-            <p>Kom till din första lektion — vi ordnar resten! / 来参加第一节课，其余的我们来安排！</p>
+            <strong data-i18n="reg.step3.title">Börja träna</strong>
+            <p data-i18n="reg.step3.text">Kom till din första lektion — vi ordnar resten!</p>
           </div>
         </div>
       </div>
@@ -1766,7 +1763,7 @@
     <div class="fade-in">
       <div class="reg-form-area">
         <div class="reg-form-header">
-          <div class="reg-form-title">ANMÄLNINGSFORMULÄR · 报名表</div>
+          <div class="reg-form-title" data-i18n="form.title">ANMÄLNINGSFORMULÄR</div>
           <div class="reg-powered">via Recess.tv</div>
         </div>
         <form class="reg-form-body" action="https://api.web3forms.com/submit" method="POST">
@@ -1774,55 +1771,52 @@
           <input type="hidden" name="subject" value="Ny anmälan – Wenxian Taekwondo / 新报名">
           <div class="form-row">
             <div class="form-group">
-              <label class="form-label">Förnamn · 名</label>
-              <input type="text" class="form-input" name="fornamn" placeholder="Erik / 王">
+              <label class="form-label" data-i18n="form.firstname">Förnamn</label>
+              <input type="text" class="form-input" name="fornamn" placeholder="Erik" data-i18n-placeholder="form.firstname.ph">
             </div>
             <div class="form-group">
-              <label class="form-label">Efternamn · 姓</label>
-              <input type="text" class="form-input" name="efternamn" placeholder="Larsson / 伟">
+              <label class="form-label" data-i18n="form.lastname">Efternamn</label>
+              <input type="text" class="form-input" name="efternamn" placeholder="Larsson" data-i18n-placeholder="form.lastname.ph">
             </div>
           </div>
           <div class="form-group">
-            <label class="form-label">Födelsedatum · 生日</label>
+            <label class="form-label" data-i18n="form.birthday">Födelsedatum</label>
             <div style="display:grid; grid-template-columns:2fr 1fr 1fr; gap:8px;">
-              <input type="number" class="form-input" name="birthyear" placeholder="År · 年 (t.ex. 2010)" min="1900" max="2025">
-              <input type="number" class="form-input" name="birthmonth" placeholder="Mån · 月" min="1" max="12">
-              <input type="number" class="form-input" name="birthday" placeholder="Dag · 日" min="1" max="31">
+              <input type="number" class="form-input" name="birthyear" placeholder="År (t.ex. 2010)" data-i18n-placeholder="form.year.ph" min="1900" max="2025">
+              <input type="number" class="form-input" name="birthmonth" placeholder="Mån" data-i18n-placeholder="form.month.ph" min="1" max="12">
+              <input type="number" class="form-input" name="birthday" placeholder="Dag" data-i18n-placeholder="form.day.ph" min="1" max="31">
             </div>
           </div>
           <div class="form-group">
-            <label class="form-label">E-post · 电子邮件</label>
+            <label class="form-label" data-i18n="form.email">E-post</label>
             <input type="email" class="form-input" name="email" placeholder="din@email.com">
           </div>
           <div class="form-group">
-            <label class="form-label">Telefon · 电话</label>
+            <label class="form-label" data-i18n="form.phone">Telefon</label>
             <input type="tel" class="form-input" name="telefon" placeholder="+46 XX XXX XX XX">
           </div>
           <div class="form-group">
-            <label class="form-label">Klass · 课程</label>
+            <label class="form-label" data-i18n="form.class">Klass</label>
             <select class="form-select" name="klass">
-              <option value="">Välj klass · 选择课程</option>
+              <option value="" data-i18n="form.class.default">Välj klass</option>
               <option>Mini Tigers (4–7 år)</option>
               <option>Junior Warriors (8–15 år)</option>
               <option>Adult Masters (16+)</option>
             </select>
           </div>
           <div class="form-group">
-            <label class="form-label">Erfarenhet · 经验</label>
+            <label class="form-label" data-i18n="form.exp">Erfarenhet</label>
             <select class="form-select" name="erfarenhet">
-              <option value="">Välj nivå · 选择级别</option>
-              <option>Nybörjare / 初学者</option>
-              <option>Lite erfarenhet / 有一些经验</option>
-              <option>Tränat förut / 有训练经历</option>
+              <option value="" data-i18n="form.exp.default">Välj nivå</option>
+              <option data-i18n="form.exp.1">Nybörjare</option>
+              <option data-i18n="form.exp.2">Lite erfarenhet</option>
+              <option data-i18n="form.exp.3">Tränat förut</option>
             </select>
           </div>
           <button type="submit" class="form-submit">
-            Skicka anmälan · 提交报名
+            <span data-i18n="form.submit">Skicka anmälan</span>
           </button>
-          <p class="form-note">
-            Gratis provlektion — inga förpliktelser · 免费体验课，无任何承诺<br>
-            Frågor? Ring oss: <span style="color:var(--red);">+46 738 430 096</span>
-          </p>
+          <p class="form-note" data-i18n-html="form.note">Gratis provlektion — inga förpliktelser<br>Frågor? Ring oss: <span style="color:var(--red);">+46 738 430 096</span></p>
         </form>
       </div>
     </div>
@@ -1832,63 +1826,63 @@
 <!-- PRICING -->
 <section class="pricing" id="pricing">
   <div class="fade-in" style="text-align:center;">
-    <p class="section-label">Priser · 价格</p>
-    <h2 class="section-title">ENKLA PRISER</h2>
-    <p class="section-subtitle" style="margin: 0 auto;">Inga dolda avgifter. Välj det abonnemang som passar dig. / 无隐藏费用，选择适合您的套餐。</p>
+    <p class="section-label" data-i18n="pricing.label">Priser</p>
+    <h2 class="section-title" data-i18n="pricing.title">ENKLA PRISER</h2>
+    <p class="section-subtitle" style="margin: 0 auto;" data-i18n="pricing.subtitle">Inga dolda avgifter. Välj det abonnemang som passar dig.</p>
   </div>
 
   <div class="pricing-grid fade-in">
     <div class="price-card">
-      <div class="price-name">PROVA PÅ</div>
-      <p class="price-cn">体 验</p>
+      <div class="price-name" data-i18n="price1.name">PROVA PÅ</div>
+      <p class="price-cn" data-i18n="price1.cn">体 验</p>
       <div class="price-amount">
         <span class="price-currency">SEK</span>
         <span class="price-num">0</span>
       </div>
-      <p class="price-period">Gratis provlektion · 免费体验</p>
+      <p class="price-period" data-i18n="price1.period">Gratis provlektion</p>
       <ul class="price-features">
-        <li>1 gratis lektion · 1节免费课</li>
-        <li>Träffa instruktörerna</li>
-        <li>Se vår anläggning</li>
-        <li>Ingen bindningstid</li>
+        <li data-i18n="price1.f1">1 gratis lektion</li>
+        <li data-i18n="price1.f2">Träffa instruktörerna</li>
+        <li data-i18n="price1.f3">Se vår anläggning</li>
+        <li data-i18n="price1.f4">Ingen bindningstid</li>
       </ul>
-      <button class="price-btn" onclick="document.getElementById('register').scrollIntoView({behavior:'smooth'})">Boka nu · 立即预约</button>
+      <button class="price-btn" onclick="document.getElementById('register').scrollIntoView({behavior:'smooth'})" data-i18n="price1.btn">Boka nu</button>
     </div>
 
     <div class="price-card featured">
-      <div class="price-name">MÅNADSMEDLEM</div>
-      <p class="price-cn">月 费 会 员</p>
+      <div class="price-name" data-i18n="price2.name">MÅNADSMEDLEM</div>
+      <p class="price-cn" data-i18n="price2.cn">月 费 会 员</p>
       <div class="price-amount">
         <span class="price-currency">SEK</span>
         <span class="price-num">699</span>
       </div>
-      <p class="price-period">per månad · 每月 · inkl. moms</p>
+      <p class="price-period" data-i18n="price2.period">per månad · inkl. moms</p>
       <ul class="price-features">
-        <li>Obegränsade lektioner · 无限次课程</li>
-        <li>Alla klasser och nivåer</li>
-        <li>Graduering inkluderad · 含升级考试</li>
-        <li>Gratis klubb-t-shirt</li>
-        <li>Tävlingsförberedelse</li>
+        <li data-i18n="price2.f1">Obegränsade lektioner</li>
+        <li data-i18n="price2.f2">Alla klasser och nivåer</li>
+        <li data-i18n="price2.f3">Graduering inkluderad</li>
+        <li data-i18n="price2.f4">Gratis klubb-t-shirt</li>
+        <li data-i18n="price2.f5">Tävlingsförberedelse</li>
       </ul>
-      <button class="price-btn featured-btn" onclick="document.getElementById('register').scrollIntoView({behavior:'smooth'})">Välj denna · 选择此套餐</button>
+      <button class="price-btn featured-btn" onclick="document.getElementById('register').scrollIntoView({behavior:'smooth'})" data-i18n="price2.btn">Välj denna</button>
     </div>
 
     <div class="price-card">
-      <div class="price-name">FAMILJ</div>
-      <p class="price-cn">家 庭</p>
+      <div class="price-name" data-i18n="price3.name">FAMILJ</div>
+      <p class="price-cn" data-i18n="price3.cn">家 庭</p>
       <div class="price-amount">
         <span class="price-currency">SEK</span>
         <span class="price-num">1199</span>
       </div>
-      <p class="price-period">per månad · 每月 (upp till 4 pers)</p>
+      <p class="price-period" data-i18n="price3.period">per månad (upp till 4 pers)</p>
       <ul class="price-features">
-        <li>2–4 familjemedlemmar</li>
-        <li>Obegränsade lektioner · 无限次</li>
-        <li>Alla klasser · 所有课程</li>
-        <li>Graduering inkluderad</li>
-        <li>Prioriterad bokning</li>
+        <li data-i18n="price3.f1">2–4 familjemedlemmar</li>
+        <li data-i18n="price3.f2">Obegränsade lektioner</li>
+        <li data-i18n="price3.f3">Alla klasser</li>
+        <li data-i18n="price3.f4">Graduering inkluderad</li>
+        <li data-i18n="price3.f5">Prioriterad bokning</li>
       </ul>
-      <button class="price-btn" onclick="document.getElementById('register').scrollIntoView({behavior:'smooth'})">Boka nu · 立即预约</button>
+      <button class="price-btn" onclick="document.getElementById('register').scrollIntoView({behavior:'smooth'})" data-i18n="price3.btn">Boka nu</button>
     </div>
   </div>
 </section>
@@ -1896,8 +1890,8 @@
 <!-- INSTRUCTORS -->
 <section class="instructors" id="instructors">
   <div class="fade-in">
-    <p class="section-label">Instruktörer · 教练团队</p>
-    <h2 class="section-title">VÅR<br>HUVUDTRÄNARE</h2>
+    <p class="section-label" data-i18n="instr.label">Instruktörer</p>
+    <h2 class="section-title" data-i18n-html="instr.title">VÅR<br>HUVUDTRÄNARE</h2>
     <div class="divider"></div>
   </div>
 
@@ -1908,11 +1902,8 @@
       </div>
       <div>
         <div class="instructor-name">JACKIE ZHANG</div>
-        <div class="instructor-title" style="margin-bottom:1.2rem;">张哥舒 · Huvudtränare / 主教练</div>
-        <p class="instructor-bio" style="color:rgba(255,255,255,0.65); font-size:0.95rem; margin-bottom:1.5rem;">
-          Jackie Zhang har tränat taekwondo sedan 1994 och innehar Kukkiwon svart bälte 4:e dan. Han är f.d. soldat i kinesiska arméns specialstyrkor och har sin utbildning under "kinesiska taekwondons fader" — mästare Yu Guosen, 9:e dan.<br><br>
-          Med djup tävlingserfarenhet och gedigen pedagogisk bakgrund leder Jackie det dagliga träningsarbetet och ansvarar för klubbens tävlingsutveckling. Han innehar även relevanta tränarmeriter inom det svenska STF/RF-systemet.
-        </p>
+        <div class="instructor-title" style="margin-bottom:1.2rem;" data-i18n-html="instr.subtitle">张哥舒 · Huvudtränare</div>
+        <p class="instructor-bio" style="color:rgba(255,255,255,0.65); font-size:0.95rem; margin-bottom:1.5rem;" data-i18n-html="instr.bio">Jackie Zhang har tränat taekwondo sedan 1994 och innehar Kukkiwon svart bälte 4:e dan. Han är f.d. soldat i kinesiska arméns specialstyrkor och har sin utbildning under "kinesiska taekwondons fader" — mästare Yu Guosen, 9:e dan.<br><br>Med djup tävlingserfarenhet och gedigen pedagogisk bakgrund leder Jackie det dagliga träningsarbetet och ansvarar för klubbens tävlingsutveckling. Han innehar även relevanta tränarmeriter inom det svenska STF/RF-systemet.</p>
         <div style="display:flex; gap:1rem; flex-wrap:wrap;">
           <div style="padding:0.6rem 1.2rem; background:rgba(200,0,26,0.1); border:1px solid rgba(200,0,26,0.3); border-radius:2px; font-size:0.78rem; font-weight:700; letter-spacing:1.5px; color:#ff6b80;">Kukkiwon 4:e Dan</div>
           <div style="padding:0.6rem 1.2rem; background:rgba(200,0,26,0.1); border:1px solid rgba(200,0,26,0.3); border-radius:2px; font-size:0.78rem; font-weight:700; letter-spacing:1.5px; color:#ff6b80;">STF Certifierad tränare</div>
@@ -1927,41 +1918,41 @@
 <!-- TESTIMONIALS -->
 <section class="testimonials">
   <div class="fade-in" style="text-align:center;">
-    <p class="section-label">Vad säger de? · 学员评价</p>
-    <h2 class="section-title">BERÄTTELSER FRÅN<br>VÅRA ELEVER</h2>
+    <p class="section-label" data-i18n="test.label">Vad säger de?</p>
+    <h2 class="section-title" data-i18n-html="test.title">BERÄTTELSER FRÅN<br>VÅRA ELEVER</h2>
   </div>
 
   <div class="testimonials-grid fade-in">
     <div class="testimonial-card">
       <div class="testimonial-quote">"</div>
-      <p class="testimonial-text">Min dotter har tränat här i 2 år och förändringen är otrolig — mer självförtroende, bättre fokus i skolan. Instruktörerna är fantastiska!</p>
+      <p class="testimonial-text" data-i18n="test1.text">Min dotter har tränat här i 2 år och förändringen är otrolig — mer självförtroende, bättre fokus i skolan. Instruktörerna är fantastiska!</p>
       <div class="testimonial-author">
         <div class="author-avatar">👩</div>
         <div>
-          <div class="author-name">Anna Lindgren</div>
-          <div class="author-role">Förälder · Mini Tigers</div>
+          <div class="author-name" data-i18n="test1.author">Anna Lindgren</div>
+          <div class="author-role" data-i18n="test1.role">Förälder · Mini Tigers</div>
         </div>
       </div>
     </div>
     <div class="testimonial-card">
       <div class="testimonial-quote">"</div>
-      <p class="testimonial-text">作为华人家长，能找到一个既专业又能用中文沟通的道馆太重要了。孩子很快乐，我们很放心。</p>
+      <p class="testimonial-text" data-i18n="test2.text">作为华人家长，能找到一个既专业又能用中文沟通的道馆太重要了。孩子很快乐，我们很放心。</p>
       <div class="testimonial-author">
         <div class="author-avatar">👨</div>
         <div>
-          <div class="author-name">王建国</div>
-          <div class="author-role">家长 · Junior Warriors</div>
+          <div class="author-name" data-i18n="test2.author">王建国</div>
+          <div class="author-role" data-i18n="test2.role">家长 · Junior Warriors</div>
         </div>
       </div>
     </div>
     <div class="testimonial-card">
       <div class="testimonial-quote">"</div>
-      <p class="testimonial-text">Jag började som nybörjare vid 35 och fick mitt gröna bälte efter 8 månader. Träningen är utmanande men väldigt rolig. Rekommenderas varmt!</p>
+      <p class="testimonial-text" data-i18n="test3.text">Jag började som nybörjare vid 35 och fick mitt gröna bälte efter 8 månader. Träningen är utmanande men väldigt rolig. Rekommenderas varmt!</p>
       <div class="testimonial-author">
         <div class="author-avatar">👨</div>
         <div>
-          <div class="author-name">Marcus Johansson</div>
-          <div class="author-role">Elev · Adult Masters</div>
+          <div class="author-name" data-i18n="test3.author">Marcus Johansson</div>
+          <div class="author-role" data-i18n="test3.role">Elev · Adult Masters</div>
         </div>
       </div>
     </div>
@@ -1971,8 +1962,8 @@
 <!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="fade-in">
-    <p class="section-label">Kontakt · 联系我们</p>
-    <h2 class="section-title">HITTA OSS</h2>
+    <p class="section-label" data-i18n="contact.label">Kontakt</p>
+    <h2 class="section-title" data-i18n="contact.title">HITTA OSS</h2>
     <div class="divider"></div>
   </div>
 
@@ -1981,37 +1972,33 @@
       <div class="contact-info-item">
         <div class="contact-icon">📍</div>
         <div>
-          <div class="contact-label">Adress · 地址</div>
+          <div class="contact-label" data-i18n="contact.addr.label">Adress</div>
           <div class="contact-value">Gruvgatan 14<br>Västra Frölunda, Göteborg</div>
         </div>
       </div>
       <div class="contact-info-item">
         <div class="contact-icon">📞</div>
         <div>
-          <div class="contact-label">Telefon · 电话</div>
+          <div class="contact-label" data-i18n="contact.phone.label">Telefon</div>
           <div class="contact-value">+46 738 430 096</div>
         </div>
       </div>
       <div class="contact-info-item">
         <div class="contact-icon">✉️</div>
         <div>
-          <div class="contact-label">E-post · 邮件</div>
+          <div class="contact-label" data-i18n="contact.email.label">E-post</div>
           <div class="contact-value">wenxiantaekwondo@outlook.com</div>
         </div>
       </div>
       <div class="contact-info-item">
         <div class="contact-icon">🕐</div>
         <div>
-          <div class="contact-label">Öppettider · 开放时间</div>
-          <div class="contact-value">
-            Träningsdagar enligt schema<br>
-            Kontakta oss för aktuella tider<br>
-            <span style="font-family:'Noto Sans SC',sans-serif; font-size:0.85rem; color:rgba(255,255,255,0.4);">训练时间以课表为准，请联系我们</span>
-          </div>
+          <div class="contact-label" data-i18n="contact.hours.label">Öppettider</div>
+          <div class="contact-value" data-i18n-html="contact.hours.val">Träningsdagar enligt schema<br>Kontakta oss för aktuella tider</div>
         </div>
       </div>
       <div style="margin-top:2rem;">
-        <p style="font-size:0.8rem; color:var(--gray); letter-spacing:2px; text-transform:uppercase; margin-bottom:1rem;">Följ oss · 关注我们</p>
+        <p style="font-size:0.8rem; color:var(--gray); letter-spacing:2px; text-transform:uppercase; margin-bottom:1rem;" data-i18n="contact.follow">Följ oss</p>
         <div style="display:flex; gap:0.8rem;">
           <a href="#" style="display:flex; align-items:center; justify-content:center; width:40px; height:40px; background:var(--dark2); border:1px solid rgba(255,255,255,0.08); border-radius:2px; font-size:1.1rem; text-decoration:none; transition:border-color 0.2s;" onmouseenter="this.style.borderColor='var(--red)'" onmouseleave="this.style.borderColor='rgba(255,255,255,0.08)'">📘</a>
           <a href="#" style="display:flex; align-items:center; justify-content:center; width:40px; height:40px; background:var(--dark2); border:1px solid rgba(255,255,255,0.08); border-radius:2px; font-size:1.1rem; text-decoration:none; transition:border-color 0.2s;" onmouseenter="this.style.borderColor='var(--red)'" onmouseleave="this.style.borderColor='rgba(255,255,255,0.08)'">📸</a>
@@ -2029,12 +2016,8 @@
           title="Wenxian Taekwondo — Gruvgatan 14, Västra Frölunda"></iframe>
       </div>
       <div style="margin-top:1.5rem; padding:1.5rem; background:var(--dark2); border-radius:4px; border:1px solid rgba(255,255,255,0.06);">
-        <p style="font-size:0.8rem; color:var(--gray); letter-spacing:1px; text-transform:uppercase; margin-bottom:0.5rem;">Vägbeskrivning · 交通</p>
-        <p style="font-size:0.88rem; font-weight:300; color:rgba(255,255,255,0.55); line-height:1.7;">
-          Gruvgatan 14, Västra Frölunda, Göteborg<br>
-          Buss: Linje 16 — Hållplats Gruvgatan<br>
-          Parkering: Tillgänglig i området · 附近有停车位
-        </p>
+        <p style="font-size:0.8rem; color:var(--gray); letter-spacing:1px; text-transform:uppercase; margin-bottom:0.5rem;" data-i18n="contact.dir.label">Vägbeskrivning</p>
+        <p style="font-size:0.88rem; font-weight:300; color:rgba(255,255,255,0.55); line-height:1.7;" data-i18n-html="contact.dir.val">Gruvgatan 14, Västra Frölunda, Göteborg<br>Buss: Linje 16 — Hållplats Gruvgatan<br>Parkering: Tillgänglig i området</p>
       </div>
     </div>
   </div>
@@ -2056,7 +2039,7 @@
   </div>
   <div style="display:flex; align-items:center; gap:10px;">
     <div style="width:8px; height:8px; background:var(--red); border-radius:50%;"></div>
-    <span style="font-size:0.78rem; font-weight:700; letter-spacing:2px; color:rgba(255,255,255,0.5); text-transform:uppercase;">Grundad 2021 · 成立于2021年</span>
+    <span style="font-size:0.78rem; font-weight:700; letter-spacing:2px; color:rgba(255,255,255,0.5); text-transform:uppercase;" data-i18n="org.founded">Grundad 2021</span>
   </div>
 </div>
 
@@ -2064,18 +2047,205 @@
 <footer>
   <div>
     <div class="footer-logo">WenXian <span>TKD</span></div>
-    <div class="footer-cn">文 贤 跆 拳 道 协 会</div>
+    <div class="footer-cn" data-i18n="footer.cn">文 贤 跆 拳 道 协 会</div>
   </div>
   <ul class="footer-links">
-    <li><a href="#about">Om oss</a></li>
-    <li><a href="#classes">Klasser</a></li>
-    <li><a href="#pricing">Priser</a></li>
-    <li><a href="#register">Anmälan</a></li>
-    <li><a href="#contact">Kontakt</a></li>
+    <li><a href="#about" data-i18n="nav.about">Om oss</a></li>
+    <li><a href="#classes" data-i18n="nav.classes">Klasser</a></li>
+    <li><a href="#pricing" data-i18n="nav.pricing">Priser</a></li>
+    <li><a href="#register" data-i18n="reg.label">Anmälan</a></li>
+    <li><a href="#contact" data-i18n="contact.label">Kontakt</a></li>
   </ul>
   <div class="footer-copy">© 2025 Wenxian Taekwondo Förening · Org.nr 802521-1049 · Göteborg</div>
 </footer>
 
+
+<script>
+const T = {
+  sv: {
+    'nav.about':'Om oss','nav.classes':'Klasser','nav.schedule':'Schema','nav.pricing':'Priser','nav.cta':'Anmäl dig',
+    'hero.badge':'Göteborg, Sverige · STF &amp; RF Medlem',
+    'hero.cn':'WenXian Taekwondo',
+    'hero.desc':'Göteborgbaserad tävlingsklubb för WT/Olympisk Taekwondo — grundad 2021. Vi tränar nästa generations mästare med disciplin, mod och respekt.',
+    'hero.cta':'Anmäl dig nu','hero.classes':'Våra klasser',
+    'hero.stat1':'Års erfarenhet','hero.stat2':'Aktiva elever','hero.stat3':'Klasser',
+    'about.label':'Om oss','about.title':'TRÄNA MED<br>DE BÄSTA',
+    'about.text':'Wenxian Taekwondo Förening grundades 2021 och är idag en av Göteborgs mest framstående tävlingsklubbar för WT/Olympisk Taekwondo, med nära hundra aktiva medlemmar. Som den <em>första kinesiskledda</em> idrottsföreningen i Sverige som systematiskt tagit sig in i det svenska och europeiska tävlingssystemet är vi stolta STF- och RF-medlemmar.',
+    'about.val1.title':'Disciplin','about.val1.desc':'Vi lär ut mer än sparkar och slag — vi bygger karaktär och självdisciplin som varar livet ut.',
+    'about.val2.title':'Respekt','about.val2.desc':'Respekt för sig själv, sina träningskamrater och sina instruktörer är grunden i vår träning.',
+    'about.val3.title':'Excellens','about.val3.desc':'Huvudtränare med Kukkiwon 4:e dan, f.d. kinesisk specialstyrka, och lärjunge till "kinesiska taekwondons fader" Yu Guosen (9:e dan). Sedan 1994.',
+    'classes.label':'Klasser','classes.title':'HITTA DIN<br>KLASS','classes.note':'Alla nivåer välkomna — från nybörjare till tävlare.',
+    'class.mini.age':'5 – 7 år','class.mini.name':'MINI<br>KLASS','class.mini.cn':'儿 童 班',
+    'class.mini.desc':'Lekfull och säker introduktion till taekwondo. Barnen lär sig grundrörelser, balans, koordination och respekt i en trygg miljö.',
+    'class.mini.days':'Tis, Fre, Lör','class.mini.level':'Nybörjare',
+    'class.junior.age':'8 – 11 år','class.junior.name':'JUNIOR<br>KLASS','class.junior.cn':'儿 童 进 阶 班',
+    'class.junior.desc':'Teknisk sparkteknik, grundläggande taktik och tävlingsförberedelse. Fokus på att bygga stark grund för vidare tävlingskarriär.',
+    'class.junior.days':'Ons, Fre, Lör','class.junior.level':'Alla nivåer',
+    'class.youth.age':'12+ &amp; Vuxna','class.youth.name':'UNGDOM &amp;<br>VUXEN','class.youth.cn':'青 少 年 & 成 人 班',
+    'class.youth.desc':'Taekwondo, kondition och Kickboxing för ungdomar och vuxna. Träna tävlingsteknik eller kom för en aktiv och rolig träning.',
+    'class.youth.days':'Mån, Tor, Fre, Lör, Sön','class.youth.level':'Alla nivåer',
+    'class.elite.age':'Tävlande','class.elite.name':'TÄVLINGS-<br>KLASS','class.elite.cn':'竞 技 班',
+    'class.elite.desc':'Systematisk tävlingsträning för klubbens utvalda atleter. Matchförberedelse, videogenomgång och europeiska tävlingar.',
+    'class.elite.days':'Mån, Lör','class.elite.access':'Utvald av tränaren',
+    'label.time':'Tid','label.days':'Dagar','label.level':'Nivå','label.access':'Tillträde',
+    'schedule.label':'Veckans schema','schedule.title':'TRÄNINGS-<br>SCHEMA','schedule.cta':'Boka prova-på',
+    'th.day':'Dag','th.time':'Tid','th.class':'Klass','th.age':'Ålder',
+    'day.monday':'MÅNDAG','day.tuesday':'TISDAG','day.wednesday':'ONSDAG','day.thursday':'TORSDAG',
+    'day.friday':'FREDAG','day.saturday':'LÖRDAG','day.sunday':'SÖNDAG',
+    'pill.competition':'Tävlingsklass','pill.fitness':'Kondition + Kickboxing','pill.kids':'Barn',
+    'pill.elite':'Elitgrupp','pill.private':'Privatlektioner','pill.youth':'Ungdom',
+    'pill.reserve':'Tävlingsklass (reserv)','pill.kidsyouth':'Barn + Ungdom','pill.mixed':'Mixad klass',
+    'td.competitors':'Alla tävlande','td.selected':'Utvalda','td.contact':'Kontakta oss för bokning',
+    'td.open':'Öppet för alla','td.all':'Alla',
+    'age.5to7':'5 – 7 år','age.8to11':'8 – 11 år','age.12plus':'12+ &amp; Vuxna',
+    'age.12':'12+ år','age.8to12':'8 – 11 &amp; 12+','age.all':'Alla',
+    'schedule.note':'* Tisdagens elitgrupp: 1 plats gratis (utvalda av tränaren) + 2 frivilliga platser à 200 kr/pass. Giltig fr.o.m. 2 juni 2025',
+    'gallery.label':'Galleri','gallery.title':'I TRÄNINGS-<br>SALEN',
+    'video.label':'Video','video.title':'I AKTION',
+    'reg.label':'Anmälan','reg.title':'BÖRJA DIN<br>RESA',
+    'reg.subtitle':'Prova en gratis lektion utan förpliktelser. Fyll i formuläret så kontaktar vi dig inom 24 timmar.',
+    'reg.step1.title':'Fyll i formuläret','reg.step1.text':'Ange dina uppgifter och vilken klass du är intresserad av.',
+    'reg.step2.title':'Vi kontaktar dig','reg.step2.text':'Vår instruktör ringer eller mejlar dig för att boka din provlektion.',
+    'reg.step3.title':'Börja träna','reg.step3.text':'Kom till din första lektion — vi ordnar resten!',
+    'form.title':'ANMÄLNINGSFORMULÄR',
+    'form.firstname':'Förnamn','form.firstname.ph':'Erik',
+    'form.lastname':'Efternamn','form.lastname.ph':'Larsson',
+    'form.birthday':'Födelsedatum','form.year.ph':'År (t.ex. 2010)','form.month.ph':'Mån','form.day.ph':'Dag',
+    'form.email':'E-post','form.phone':'Telefon',
+    'form.class':'Klass','form.class.default':'Välj klass',
+    'form.exp':'Erfarenhet','form.exp.default':'Välj nivå',
+    'form.exp.1':'Nybörjare','form.exp.2':'Lite erfarenhet','form.exp.3':'Tränat förut',
+    'form.submit':'Skicka anmälan',
+    'form.note':'Gratis provlektion — inga förpliktelser<br>Frågor? Ring oss: <span style="color:var(--red);">+46 738 430 096</span>',
+    'pricing.label':'Priser','pricing.title':'ENKLA PRISER','pricing.subtitle':'Inga dolda avgifter. Välj det abonnemang som passar dig.',
+    'price1.name':'PROVA PÅ','price1.cn':'体 验','price1.period':'Gratis provlektion',
+    'price1.f1':'1 gratis lektion','price1.f2':'Träffa instruktörerna','price1.f3':'Se vår anläggning','price1.f4':'Ingen bindningstid','price1.btn':'Boka nu',
+    'price2.name':'MÅNADSMEDLEM','price2.cn':'月 费 会 员','price2.period':'per månad · inkl. moms',
+    'price2.f1':'Obegränsade lektioner','price2.f2':'Alla klasser och nivåer','price2.f3':'Graduering inkluderad','price2.f4':'Gratis klubb-t-shirt','price2.f5':'Tävlingsförberedelse','price2.btn':'Välj denna',
+    'price3.name':'FAMILJ','price3.cn':'家 庭','price3.period':'per månad (upp till 4 pers)',
+    'price3.f1':'2–4 familjemedlemmar','price3.f2':'Obegränsade lektioner','price3.f3':'Alla klasser','price3.f4':'Graduering inkluderad','price3.f5':'Prioriterad bokning','price3.btn':'Boka nu',
+    'instr.label':'Instruktörer','instr.title':'VÅR<br>HUVUDTRÄNARE','instr.subtitle':'张哥舒 · Huvudtränare',
+    'instr.bio':'Jackie Zhang har tränat taekwondo sedan 1994 och innehar Kukkiwon svart bälte 4:e dan. Han är f.d. soldat i kinesiska arméns specialstyrkor och har sin utbildning under "kinesiska taekwondons fader" — mästare Yu Guosen, 9:e dan.<br><br>Med djup tävlingserfarenhet och gedigen pedagogisk bakgrund leder Jackie det dagliga träningsarbetet och ansvarar för klubbens tävlingsutveckling. Han innehar även relevanta tränarmeriter inom det svenska STF/RF-systemet.',
+    'test.label':'Vad säger de?','test.title':'BERÄTTELSER FRÅN<br>VÅRA ELEVER',
+    'test1.text':'Min dotter har tränat här i 2 år och förändringen är otrolig — mer självförtroende, bättre fokus i skolan. Instruktörerna är fantastiska!',
+    'test1.author':'Anna Lindgren','test1.role':'Förälder · Mini Tigers',
+    'test2.text':'Som förälder med kinesisk bakgrund är det ovärderligt att hitta en förening som är professionell och kan kommunicera på kinesiska. Barnen är glada och vi känner oss trygga.',
+    'test2.author':'王建国','test2.role':'Förälder · Junior Warriors',
+    'test3.text':'Jag började som nybörjare vid 35 och fick mitt gröna bälte efter 8 månader. Träningen är utmanande men väldigt rolig. Rekommenderas varmt!',
+    'test3.author':'Marcus Johansson','test3.role':'Elev · Adult Masters',
+    'contact.label':'Kontakt','contact.title':'HITTA OSS',
+    'contact.addr.label':'Adress','contact.phone.label':'Telefon','contact.email.label':'E-post','contact.hours.label':'Öppettider',
+    'contact.hours.val':'Träningsdagar enligt schema<br>Kontakta oss för aktuella tider',
+    'contact.follow':'Följ oss','contact.dir.label':'Vägbeskrivning',
+    'contact.dir.val':'Gruvgatan 14, Västra Frölunda, Göteborg<br>Buss: Linje 16 — Hållplats Gruvgatan<br>Parkering: Tillgänglig i området',
+    'footer.cn':'文 贤 跆 拳 道 协 会','org.founded':'Grundad 2021',
+  },
+  zh: {
+    'nav.about':'关于我们','nav.classes':'课程','nav.schedule':'时间表','nav.pricing':'价格','nav.cta':'报名',
+    'hero.badge':'哥德堡 · 瑞典 · STF &amp; RF 成员',
+    'hero.cn':'文 贤 跆 拳 道 协 会',
+    'hero.desc':'哥德堡领先的WT/奥林匹克跆拳道俱乐部——成立于2021年。培育下一代冠军，以纪律、勇气和尊重为核心。',
+    'hero.cta':'立即报名','hero.classes':'查看课程',
+    'hero.stat1':'年经验','hero.stat2':'活跃学员','hero.stat3':'课程级别',
+    'about.label':'关于我们','about.title':'与最好的<br>一起训练',
+    'about.text':'文贤跆拳道协会成立于2021年，是哥德堡最具代表性的WT/奥林匹克跆拳道俱乐部之一，拥有近百名活跃会员。作为瑞典<em>首家系统性进入瑞典及欧洲赛事体系的华人主导体育协会</em>，我们是STF和RF的正式成员，深感自豪。',
+    'about.val1.title':'纪律','about.val1.desc':'我们教授的不仅是踢腿和技术——我们培养终身受益的品格与自律精神。',
+    'about.val2.title':'尊重','about.val2.desc':'尊重自己、队友和教练是我们训练的基础。',
+    'about.val3.title':'卓越','about.val3.desc':'主教练持Kukkiwon四段黑带，前中国特种部队军人，师承"中国跆拳道之父"余国森九段。自1994年起执教。',
+    'classes.label':'课程','classes.title':'找到你的<br>课程','classes.note':'所有级别均欢迎，从初学者到竞技选手。',
+    'class.mini.age':'5 – 7 岁','class.mini.name':'儿童<br>基础班','class.mini.cn':'儿 童 班',
+    'class.mini.desc':'以游戏为主的跆拳道启蒙课程，孩子们在安全友好的环境中学习基本动作、平衡感、协调能力和尊重他人的品格。',
+    'class.mini.days':'周二、周五、周六','class.mini.level':'初学',
+    'class.junior.age':'8 – 11 岁','class.junior.name':'儿童<br>进阶班','class.junior.cn':'儿 童 进 阶 班',
+    'class.junior.desc':'系统学习踢腿技术、基础战术和比赛准备，重点为孩子建立扎实的技术基础，为未来的竞技发展铺路。',
+    'class.junior.days':'周三、周五、周六','class.junior.level':'各级别',
+    'class.youth.age':'12岁以上 &amp; 成人','class.youth.name':'青少年 &amp;<br>成人班','class.youth.cn':'青 少 年 & 成 人 班',
+    'class.youth.desc':'面向青少年和成人的跆拳道、体能训练和踢拳课程。可选择专注竞技技术，或单纯享受积极有趣的运动体验。',
+    'class.youth.days':'周一、周四、周五、周六、周日','class.youth.level':'各级别',
+    'class.elite.age':'竞技选手','class.elite.name':'竞技<br>精英班','class.elite.cn':'竞 技 班',
+    'class.elite.desc':'面向俱乐部精选运动员的系统竞技训练，包括赛前备战、录像分析及参加欧洲级别赛事。',
+    'class.elite.days':'周一、周六','class.elite.access':'教练选拔',
+    'label.time':'时间','label.days':'日期','label.level':'级别','label.access':'参加资格',
+    'schedule.label':'每周时间表','schedule.title':'训练<br>时间表','schedule.cta':'预约体验课',
+    'th.day':'星期','th.time':'时间','th.class':'课程','th.age':'年龄',
+    'day.monday':'周一','day.tuesday':'周二','day.wednesday':'周三','day.thursday':'周四',
+    'day.friday':'周五','day.saturday':'周六','day.sunday':'周日',
+    'pill.competition':'竞技班','pill.fitness':'综合体能','pill.kids':'儿童班',
+    'pill.elite':'尖子班','pill.private':'私教课','pill.youth':'青少年班',
+    'pill.reserve':'竞技预备队','pill.kidsyouth':'儿童&青少年','pill.mixed':'混合课',
+    'td.competitors':'全员竞技','td.selected':'教练选拔','td.contact':'请联系我们预约',
+    'td.open':'全员开放','td.all':'全员',
+    'age.5to7':'5 – 7 岁','age.8to11':'8 – 11 岁','age.12plus':'12岁以上 &amp; 成人',
+    'age.12':'12岁以上','age.8to12':'8 – 11 &amp; 12岁以上','age.all':'全员',
+    'schedule.note':'* 周二尖子班：1名免费（教练选拔）+ 2名自愿报名每次200克朗。自2025年6月2日起生效',
+    'gallery.label':'照片集','gallery.title':'训练<br>现场',
+    'video.label':'视频','video.title':'精彩<br>瞬间',
+    'reg.label':'报名','reg.title':'开始你的<br>旅程',
+    'reg.subtitle':'免费体验一节课，无任何承诺。填写表格后我们将在24小时内联系您。',
+    'reg.step1.title':'填写表格','reg.step1.text':'填写您的信息和感兴趣的课程。',
+    'reg.step2.title':'我们联系您','reg.step2.text':'我们的教练将通过电话或邮件联系您预约体验课。',
+    'reg.step3.title':'开始训练','reg.step3.text':'来参加第一节课，其余的我们来安排！',
+    'form.title':'报名表',
+    'form.firstname':'名','form.firstname.ph':'王',
+    'form.lastname':'姓','form.lastname.ph':'伟',
+    'form.birthday':'生日','form.year.ph':'年（如 2010）','form.month.ph':'月','form.day.ph':'日',
+    'form.email':'电子邮件','form.phone':'电话',
+    'form.class':'课程','form.class.default':'选择课程',
+    'form.exp':'经验','form.exp.default':'选择级别',
+    'form.exp.1':'初学者','form.exp.2':'有一些经验','form.exp.3':'有训练经历',
+    'form.submit':'提交报名',
+    'form.note':'免费体验课，无任何承诺<br>有问题？请致电：<span style="color:var(--red);">+46 738 430 096</span>',
+    'pricing.label':'价格','pricing.title':'透明定价','pricing.subtitle':'无隐藏费用，选择适合您的套餐。',
+    'price1.name':'体验课','price1.cn':'体 验','price1.period':'免费体验',
+    'price1.f1':'1节免费课','price1.f2':'与教练面对面','price1.f3':'参观训练场地','price1.f4':'无任何承诺','price1.btn':'立即预约',
+    'price2.name':'月费会员','price2.cn':'月 费 会 员','price2.period':'每月 · 含税',
+    'price2.f1':'无限次课程','price2.f2':'所有课程和级别','price2.f3':'含升级考试','price2.f4':'免费俱乐部T恤','price2.f5':'赛前训练','price2.btn':'选择此套餐',
+    'price3.name':'家庭套餐','price3.cn':'家 庭','price3.period':'每月（最多4人）',
+    'price3.f1':'2至4名家庭成员','price3.f2':'无限次课程','price3.f3':'所有课程','price3.f4':'含升级考试','price3.f5':'优先预约','price3.btn':'立即预约',
+    'instr.label':'教练团队','instr.title':'主<br>教练','instr.subtitle':'张哥舒 · 主教练',
+    'instr.bio':'张哥舒教练自1994年开始修习跆拳道，持有Kukkiwon黑带四段。他曾服役于中国人民解放军特种部队，师承"中国跆拳道之父"余国森九段。<br><br>凭借深厚的竞技经验与扎实的教学功底，张教练主导日常训练工作，并负责俱乐部的竞技培养体系。他同时持有瑞典STF/RF体系内的相关教练资质。',
+    'test.label':'学员评价','test.title':'来自学员的<br>真实声音',
+    'test1.text':'我女儿在这里训练了两年，变化令人难以置信——更有自信、在学校更专注。教练们真的很棒！',
+    'test1.author':'Anna Lindgren','test1.role':'家长 · Mini Tigers',
+    'test2.text':'作为华人家长，能找到一个既专业又能用中文沟通的道馆太重要了。孩子很快乐，我们很放心。',
+    'test2.author':'王建国','test2.role':'家长 · Junior Warriors',
+    'test3.text':'我35岁才开始，8个月后拿到了绿带。训练很有挑战性但也非常有趣，强烈推荐！',
+    'test3.author':'Marcus Johansson','test3.role':'学员 · Adult Masters',
+    'contact.label':'联系我们','contact.title':'找到我们',
+    'contact.addr.label':'地址','contact.phone.label':'电话','contact.email.label':'邮件','contact.hours.label':'开放时间',
+    'contact.hours.val':'训练时间以课表为准<br>请联系我们了解详情',
+    'contact.follow':'关注我们','contact.dir.label':'交通指引',
+    'contact.dir.val':'Gruvgatan 14, Västra Frölunda, 哥德堡<br>公交：16路——Gruvgatan站<br>停车：附近有停车位',
+    'footer.cn':'文 贤 跆 拳 道 协 会','org.founded':'成立于2021年',
+  }
+};
+
+let currentLang = localStorage.getItem('lang') || 'sv';
+
+function applyLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('lang', lang);
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const v = T[lang][el.dataset.i18n];
+    if (v !== undefined) el.textContent = v;
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const v = T[lang][el.dataset.i18nHtml];
+    if (v !== undefined) el.innerHTML = v;
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const v = T[lang][el.dataset.i18nPlaceholder];
+    if (v !== undefined) el.placeholder = v;
+  });
+  const btn = document.getElementById('lang-btn');
+  if (btn) btn.textContent = lang === 'sv' ? '中文' : 'Svenska';
+}
+
+function toggleLang() { applyLang(currentLang === 'sv' ? 'zh' : 'sv'); }
+
+document.addEventListener('DOMContentLoaded', () => applyLang(currentLang));
+</script>
 <script>
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
