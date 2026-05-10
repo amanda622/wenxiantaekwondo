@@ -1571,7 +1571,7 @@
         <tr style="border-top:2px solid rgba(200,0,26,0.2);">
           <td rowspan="2" data-i18n="day.wednesday">ONSDAG</td>
           <td>18:00 – 19:00</td>
-          <td><span class="class-pill pill-kids" data-i18n="pill.kids">Barn</span></td>
+          <td><span class="class-pill pill-kids" data-i18n="pill.junior">Junior Klass</span></td>
           <td data-i18n="age.8to11">8 – 11 år</td>
           <td>—</td>
         </tr>
@@ -1622,7 +1622,7 @@
         </tr>
         <tr>
           <td>17:00 – 18:00</td>
-          <td><span class="class-pill pill-kids" data-i18n="pill.kids">Barn</span></td>
+          <td><span class="class-pill pill-kids" data-i18n="pill.junior">Junior Klass</span></td>
           <td data-i18n="age.8to11">8 – 11 år</td>
           <td>—</td>
         </tr>
@@ -1820,9 +1820,9 @@
             <label class="form-label" data-i18n="form.class">Klass</label>
             <select class="form-select" name="klass">
               <option value="" data-i18n="form.class.default">Välj klass</option>
-              <option>Mini Tigers (4–7 år)</option>
-              <option>Junior Warriors (8–15 år)</option>
-              <option>Adult Masters (16+)</option>
+              <option data-i18n="form.class.mini">Mini Klass (5–7 år)</option>
+              <option data-i18n="form.class.junior">Junior Klass (8–11 år)</option>
+              <option data-i18n="form.class.youth">Ungdom &amp; Vuxen (12+)</option>
             </select>
           </div>
           <div class="form-group">
@@ -2090,7 +2090,7 @@ const T = {
     'day.monday':'MÅNDAG','day.tuesday':'TISDAG','day.wednesday':'ONSDAG','day.thursday':'TORSDAG',
     'day.friday':'FREDAG','day.saturday':'LÖRDAG','day.sunday':'SÖNDAG',
     'pill.competition':'Tävlingsklass','pill.fitness':'Kondition + Kickboxing','pill.kids':'Mini Klass',
-    'pill.elite':'Tävlingsklass','pill.private':'Privatlektioner','pill.youth':'Junior Klass',
+    'pill.junior':'Junior Klass','pill.elite':'Tävlingsklass','pill.private':'Privatlektioner','pill.youth':'Ungdom & Vuxen',
     'pill.reserve':'Tävlingsklass (reserv)','pill.kidsyouth':'Mini & Junior Klass','pill.mixed':'Ungdom & Vuxen',
     'td.competitors':'Alla tävlande','td.selected':'Utvalda','td.contact':'Kontakta oss för bokning',
     'td.open':'Öppet för alla','td.all':'Alla',
@@ -2109,7 +2109,7 @@ const T = {
     'form.lastname':'Efternamn','form.lastname.ph':'Larsson',
     'form.birthday':'Födelsedatum','form.year.ph':'År (t.ex. 2010)','form.month.ph':'Mån','form.day.ph':'Dag',
     'form.email':'E-post','form.phone':'Telefon',
-    'form.class':'Klass','form.class.default':'Välj klass',
+    'form.class':'Klass','form.class.default':'Välj klass','form.class.mini':'Mini Klass (5–7 år)','form.class.junior':'Junior Klass (8–11 år)','form.class.youth':'Ungdom & Vuxen (12+)',
     'form.exp':'Erfarenhet','form.exp.default':'Välj nivå',
     'form.exp.1':'Nybörjare','form.exp.2':'Lite erfarenhet','form.exp.3':'Tränat förut',
     'form.submit':'Skicka anmälan',
@@ -2166,7 +2166,7 @@ const T = {
     'day.monday':'周一','day.tuesday':'周二','day.wednesday':'周三','day.thursday':'周四',
     'day.friday':'周五','day.saturday':'周六','day.sunday':'周日',
     'pill.competition':'竞技精英班','pill.fitness':'综合体能','pill.kids':'儿童基础班',
-    'pill.elite':'竞技精英班','pill.private':'私教课','pill.youth':'儿童进阶班',
+    'pill.junior':'儿童进阶班','pill.elite':'竞技精英班','pill.private':'私教课','pill.youth':'青少年&成人班',
     'pill.reserve':'竞技预备队','pill.kidsyouth':'基础&进阶班','pill.mixed':'青少年&成人班',
     'td.competitors':'全员竞技','td.selected':'教练选拔','td.contact':'请联系我们预约',
     'td.open':'全员开放','td.all':'全员',
@@ -2185,7 +2185,7 @@ const T = {
     'form.lastname':'姓','form.lastname.ph':'伟',
     'form.birthday':'生日','form.year.ph':'年（如 2010）','form.month.ph':'月','form.day.ph':'日',
     'form.email':'电子邮件','form.phone':'电话',
-    'form.class':'课程','form.class.default':'选择课程',
+    'form.class':'课程','form.class.default':'选择课程','form.class.mini':'儿童基础班 (5–7岁)','form.class.junior':'儿童进阶班 (8–11岁)','form.class.youth':'青少年&成人班 (12岁+)',
     'form.exp':'经验','form.exp.default':'选择级别',
     'form.exp.1':'初学者','form.exp.2':'有一些经验','form.exp.3':'有训练经历',
     'form.submit':'提交报名',
