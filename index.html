@@ -766,7 +766,7 @@
   }
 
   .price-card.featured::before {
-    content: 'POPULÄR / 最受欢迎';
+    content: attr(data-ribbon);
     position: absolute;
     top: 1.2rem;
     right: -2.5rem;
@@ -1290,6 +1290,30 @@
     max-height: 88vh;
     border-radius: 8px;
     object-fit: contain;
+  }
+  #modal-prev, #modal-next {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: #fff;
+    font-size: 2.4rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0.8rem 1rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+    z-index: 10001;
+    user-select: none;
+  }
+  #modal-prev { left: 1rem; }
+  #modal-next { right: 1rem; }
+  #modal-prev:hover, #modal-next:hover { background: rgba(255,255,255,0.2); }
+  @media (max-width: 700px) {
+    #modal-prev, #modal-next { font-size: 1.8rem; padding: 0.5rem 0.7rem; }
+    #modal-prev { left: 0.3rem; }
+    #modal-next { right: 0.3rem; }
   }
 
   @media (max-width: 600px) {
@@ -1844,7 +1868,7 @@
       <button class="price-btn" onclick="document.getElementById('register').scrollIntoView({behavior:'smooth'})" data-i18n="price1.btn">Boka nu</button>
     </div>
 
-    <div class="price-card featured">
+    <div class="price-card featured" data-ribbon="POPULÄR">
       <div class="price-name" data-i18n="price2.name">ORDINARIE MEDLEM</div>
       <div class="price-amount">
         <span class="price-currency">SEK</span>
@@ -2207,6 +2231,8 @@ function applyLang(lang) {
     const v = T[lang][el.dataset.i18nPlaceholder];
     if (v !== undefined) el.placeholder = v;
   });
+  const ribbon = document.querySelector('.price-card.featured');
+  if (ribbon) ribbon.dataset.ribbon = lang === 'sv' ? 'POPULÄR' : '最受欢迎';
   const btn = document.getElementById('lang-btn');
   if (btn) btn.textContent = lang === 'sv' ? '中文' : 'Svenska';
 }
@@ -2237,6 +2263,8 @@ document.addEventListener('DOMContentLoaded', () => applyLang(currentLang));
 
 <!-- MEDIA MODAL -->
 <div id="media-modal" onclick="handleModalClick(event)">
+  <button id="modal-prev" onclick="navigate(-1)" aria-label="Föregående">&#8249;</button>
+  <button id="modal-next" onclick="navigate(1)" aria-label="Nästa">&#8250;</button>
   <div id="modal-inner">
     <button id="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
     <div id="modal-video-wrap">
@@ -2249,32 +2277,74 @@ document.addEventListener('DOMContentLoaded', () => applyLang(currentLang));
 </div>
 
 <script>
-function openVideo(id, isShorts) {
+var mediaItems = [
+  {type:'photo', src:'1.jpeg'},
+  {type:'photo', src:'2.jpeg'},
+  {type:'photo', src:'3.jpeg'},
+  {type:'photo', src:'4.jpeg'},
+  {type:'photo', src:'5.jpeg'},
+  {type:'photo', src:'6.jpeg'},
+  {type:'photo', src:'7.jpeg'},
+  {type:'photo', src:'8.jpeg'},
+  {type:'photo', src:'9.jpeg'},
+  {type:'photo', src:'10.jpg'},
+  {type:'photo', src:'11.jpg'},
+  {type:'photo', src:'12.jpg'},
+  {type:'photo', src:'13.jpg'},
+  {type:'photo', src:'14.jpg'},
+  {type:'photo', src:'15.jpg'},
+  {type:'photo', src:'16.jpg'},
+  {type:'video', id:'kKv3RyO46g0', isShorts:false},
+  {type:'video', id:'G6KdE-BQi3E', isShorts:false},
+  {type:'video', id:'PfNaqUOQis8', isShorts:false},
+  {type:'video', id:'FdyOZV--Awk', isShorts:true},
+];
+var currentIndex = 0;
+
+function openItem(i) {
+  currentIndex = i;
+  var item = mediaItems[i];
   var wrap = document.getElementById('modal-video-wrap');
   var inner = document.getElementById('modal-inner');
-  wrap.style.display = 'block';
-  document.getElementById('modal-photo-wrap').style.display = 'none';
-  if (isShorts) {
-    wrap.style.paddingBottom = '0';
-    wrap.style.height = 'min(80vh, 560px)';
-    inner.style.maxWidth = 'calc(min(80vh, 560px) * 9 / 16)';
-  } else {
-    wrap.style.paddingBottom = '56.25%';
-    wrap.style.height = '';
+  if (item.type === 'photo') {
+    wrap.style.display = 'none';
+    document.getElementById('modal-photo-wrap').style.display = 'block';
+    document.getElementById('modal-photo-img').src = item.src;
     inner.style.maxWidth = '920px';
+  } else {
+    wrap.style.display = 'block';
+    document.getElementById('modal-photo-wrap').style.display = 'none';
+    if (item.isShorts) {
+      wrap.style.paddingBottom = '0';
+      wrap.style.height = 'min(80vh, 560px)';
+      inner.style.maxWidth = 'calc(min(80vh, 560px) * 9 / 16)';
+    } else {
+      wrap.style.paddingBottom = '56.25%';
+      wrap.style.height = '';
+      inner.style.maxWidth = '920px';
+    }
+    document.getElementById('modal-video-iframe').src =
+      'https://www.youtube-nocookie.com/embed/' + item.id + '?autoplay=1&rel=0';
   }
-  document.getElementById('modal-video-iframe').src =
-    'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
   document.getElementById('media-modal').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
+
+function navigate(dir) {
+  document.getElementById('modal-video-iframe').src = '';
+  openItem((currentIndex + dir + mediaItems.length) % mediaItems.length);
+}
+
 function openPhoto(src) {
-  document.getElementById('modal-video-wrap').style.display = 'none';
-  document.getElementById('modal-photo-wrap').style.display = 'block';
-  document.getElementById('modal-photo-img').src = src;
-  document.getElementById('media-modal').classList.add('open');
-  document.body.style.overflow = 'hidden';
+  var i = mediaItems.findIndex(function(m){ return m.type==='photo' && m.src===src; });
+  if (i >= 0) openItem(i);
 }
+
+function openVideo(id, isShorts) {
+  var i = mediaItems.findIndex(function(m){ return m.type==='video' && m.id===id; });
+  if (i >= 0) openItem(i);
+}
+
 function closeModal() {
   document.getElementById('media-modal').classList.remove('open');
   document.getElementById('modal-video-iframe').src = '';
@@ -2283,11 +2353,16 @@ function closeModal() {
   document.getElementById('modal-inner').style.maxWidth = '920px';
   document.body.style.overflow = '';
 }
+
 function handleModalClick(e) {
   if (e.target === document.getElementById('media-modal')) closeModal();
 }
+
 document.addEventListener('keydown', function(e) {
+  if (!document.getElementById('media-modal').classList.contains('open')) return;
   if (e.key === 'Escape') closeModal();
+  if (e.key === 'ArrowLeft') navigate(-1);
+  if (e.key === 'ArrowRight') navigate(1);
 });
 </script>
 </body>
