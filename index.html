@@ -743,7 +743,7 @@
 
   .pricing-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
     margin-top: 3.5rem;
   }
@@ -1830,7 +1830,6 @@
   <div class="pricing-grid fade-in">
     <div class="price-card">
       <div class="price-name" data-i18n="price1.name">PROVA PÅ</div>
-      <p class="price-cn" data-i18n="price1.cn">体 验</p>
       <div class="price-amount">
         <span class="price-currency">SEK</span>
         <span class="price-num">0</span>
@@ -1840,45 +1839,23 @@
         <li data-i18n="price1.f1">1 gratis lektion</li>
         <li data-i18n="price1.f2">Träffa instruktörerna</li>
         <li data-i18n="price1.f3">Se vår anläggning</li>
-        <li data-i18n="price1.f4">Ingen bindningstid</li>
       </ul>
       <button class="price-btn" onclick="document.getElementById('register').scrollIntoView({behavior:'smooth'})" data-i18n="price1.btn">Boka nu</button>
     </div>
 
     <div class="price-card featured">
-      <div class="price-name" data-i18n="price2.name">MÅNADSMEDLEM</div>
-      <p class="price-cn" data-i18n="price2.cn">月 费 会 员</p>
+      <div class="price-name" data-i18n="price2.name">ORDINARIE MEDLEM</div>
       <div class="price-amount">
         <span class="price-currency">SEK</span>
-        <span class="price-num">699</span>
+        <span class="price-num">1700</span>
       </div>
-      <p class="price-period" data-i18n="price2.period">per månad · inkl. moms</p>
+      <p class="price-period" data-i18n="price2.period">per termin · inkl. moms</p>
       <ul class="price-features">
         <li data-i18n="price2.f1">Obegränsade lektioner</li>
         <li data-i18n="price2.f2">Alla klasser och nivåer</li>
-        <li data-i18n="price2.f3">Graduering inkluderad</li>
-        <li data-i18n="price2.f4">Gratis klubb-t-shirt</li>
         <li data-i18n="price2.f5">Tävlingsförberedelse</li>
       </ul>
-      <button class="price-btn featured-btn" onclick="document.getElementById('register').scrollIntoView({behavior:'smooth'})" data-i18n="price2.btn">Välj denna</button>
-    </div>
-
-    <div class="price-card">
-      <div class="price-name" data-i18n="price3.name">FAMILJ</div>
-      <p class="price-cn" data-i18n="price3.cn">家 庭</p>
-      <div class="price-amount">
-        <span class="price-currency">SEK</span>
-        <span class="price-num">1199</span>
-      </div>
-      <p class="price-period" data-i18n="price3.period">per månad (upp till 4 pers)</p>
-      <ul class="price-features">
-        <li data-i18n="price3.f1">2–4 familjemedlemmar</li>
-        <li data-i18n="price3.f2">Obegränsade lektioner</li>
-        <li data-i18n="price3.f3">Alla klasser</li>
-        <li data-i18n="price3.f4">Graduering inkluderad</li>
-        <li data-i18n="price3.f5">Prioriterad bokning</li>
-      </ul>
-      <button class="price-btn" onclick="document.getElementById('register').scrollIntoView({behavior:'smooth'})" data-i18n="price3.btn">Boka nu</button>
+      <button class="price-btn featured-btn" onclick="document.getElementById('register').scrollIntoView({behavior:'smooth'})" data-i18n="price2.btn">Boka nu</button>
     </div>
   </div>
 </section>
@@ -2116,10 +2093,8 @@ const T = {
     'pricing.label':'Priser','pricing.title':'ENKLA PRISER','pricing.subtitle':'Inga dolda avgifter. Välj det abonnemang som passar dig.',
     'price1.name':'PROVA PÅ','price1.cn':'体 验','price1.period':'Gratis provlektion',
     'price1.f1':'1 gratis lektion','price1.f2':'Träffa instruktörerna','price1.f3':'Se vår anläggning','price1.f4':'Ingen bindningstid','price1.btn':'Boka nu',
-    'price2.name':'MÅNADSMEDLEM','price2.cn':'月 费 会 员','price2.period':'per månad · inkl. moms',
-    'price2.f1':'Obegränsade lektioner','price2.f2':'Alla klasser och nivåer','price2.f3':'Graduering inkluderad','price2.f4':'Gratis klubb-t-shirt','price2.f5':'Tävlingsförberedelse','price2.btn':'Välj denna',
-    'price3.name':'FAMILJ','price3.cn':'家 庭','price3.period':'per månad (upp till 4 pers)',
-    'price3.f1':'2–4 familjemedlemmar','price3.f2':'Obegränsade lektioner','price3.f3':'Alla klasser','price3.f4':'Graduering inkluderad','price3.f5':'Prioriterad bokning','price3.btn':'Boka nu',
+    'price2.name':'ORDINARIE MEDLEM','price2.period':'per termin · inkl. moms',
+    'price2.f1':'Obegränsade lektioner','price2.f2':'Alla klasser och nivåer','price2.f5':'Tävlingsförberedelse','price2.btn':'Boka nu',
     'instr.label':'Instruktörer','instr.title':'VÅR<br>HUVUDTRÄNARE','instr.subtitle':'张哥舒 · Huvudtränare',
     'instr.bio':'Jackie Zhang har tränat taekwondo sedan 1994 och innehar Kukkiwon svart bälte 4:e dan. Han är f.d. soldat i kinesiska arméns specialstyrkor och har sin utbildning under "kinesiska taekwondons fader" — mästare Yu Guosen, 9:e dan.<br><br>Med djup tävlingserfarenhet och gedigen pedagogisk bakgrund leder Jackie det dagliga träningsarbetet och ansvarar för klubbens tävlingsutveckling. Han innehar även relevanta tränarmeriter inom det svenska STF/RF-systemet.',
     'test.label':'Vad säger de?','test.title':'BERÄTTELSER FRÅN<br>VÅRA ELEVER',
@@ -2190,14 +2165,12 @@ const T = {
     'form.exp':'经验','form.exp.default':'选择级别',
     'form.exp.1':'初学者','form.exp.2':'有一些经验','form.exp.3':'有训练经历',
     'form.submit':'提交报名',
-    'form.note':'免费体验课，无任何承诺<br>有问题？请致电：<span style="color:var(--red);">+46 738 430 096</span>',
+    'form.note':'免费体验课<br>有问题？请致电：<span style="color:var(--red);">+46 738 430 096</span>',
     'pricing.label':'价格','pricing.title':'透明定价','pricing.subtitle':'无隐藏费用，选择适合您的套餐。',
     'price1.name':'体验课','price1.cn':'体 验','price1.period':'免费体验',
     'price1.f1':'1节免费课','price1.f2':'与教练面对面','price1.f3':'参观训练场地','price1.f4':'无任何承诺','price1.btn':'立即预约',
-    'price2.name':'月费会员','price2.cn':'月 费 会 员','price2.period':'每月 · 含税',
-    'price2.f1':'无限次课程','price2.f2':'所有课程和级别','price2.f3':'含升级考试','price2.f4':'免费俱乐部T恤','price2.f5':'赛前训练','price2.btn':'选择此套餐',
-    'price3.name':'家庭套餐','price3.cn':'家 庭','price3.period':'每月（最多4人）',
-    'price3.f1':'2至4名家庭成员','price3.f2':'无限次课程','price3.f3':'所有课程','price3.f4':'含升级考试','price3.f5':'优先预约','price3.btn':'立即预约',
+    'price2.name':'普通会员','price2.period':'每学期 · 含税',
+    'price2.f1':'无限次课程','price2.f2':'所有课程和级别','price2.f5':'赛前训练','price2.btn':'立即预约',
     'instr.label':'教练团队','instr.title':'主<br>教练','instr.subtitle':'张哥舒 · 主教练',
     'instr.bio':'张哥舒教练自1994年开始修习跆拳道，持有Kukkiwon黑带四段。他曾服役于中国人民解放军特种部队，师承"中国跆拳道之父"余国森九段。<br><br>凭借深厚的竞技经验与扎实的教学功底，张教练主导日常训练工作，并负责俱乐部的竞技培养体系。他同时持有瑞典STF/RF体系内的相关教练资质。',
     'test.label':'学员评价','test.title':'来自学员的<br>真实声音',
