@@ -2089,9 +2089,9 @@ const T = {
     'th.day':'Dag','th.time':'Tid','th.class':'Klass','th.age':'Ålder',
     'day.monday':'MÅNDAG','day.tuesday':'TISDAG','day.wednesday':'ONSDAG','day.thursday':'TORSDAG',
     'day.friday':'FREDAG','day.saturday':'LÖRDAG','day.sunday':'SÖNDAG',
-    'pill.competition':'Tävlingsklass','pill.fitness':'Kondition + Kickboxing','pill.kids':'Barn',
-    'pill.elite':'Elitgrupp','pill.private':'Privatlektioner','pill.youth':'Ungdom',
-    'pill.reserve':'Tävlingsklass (reserv)','pill.kidsyouth':'Barn + Ungdom','pill.mixed':'Mixad klass',
+    'pill.competition':'Tävlingsklass','pill.fitness':'Kondition + Kickboxing','pill.kids':'Mini Klass',
+    'pill.elite':'Tävlingsklass','pill.private':'Privatlektioner','pill.youth':'Junior Klass',
+    'pill.reserve':'Tävlingsklass (reserv)','pill.kidsyouth':'Mini & Junior Klass','pill.mixed':'Ungdom & Vuxen',
     'td.competitors':'Alla tävlande','td.selected':'Utvalda','td.contact':'Kontakta oss för bokning',
     'td.open':'Öppet för alla','td.all':'Alla',
     'age.5to7':'5 – 7 år','age.8to11':'8 – 11 år','age.12plus':'12+ &amp; Vuxna',
@@ -2165,9 +2165,9 @@ const T = {
     'th.day':'星期','th.time':'时间','th.class':'课程','th.age':'年龄',
     'day.monday':'周一','day.tuesday':'周二','day.wednesday':'周三','day.thursday':'周四',
     'day.friday':'周五','day.saturday':'周六','day.sunday':'周日',
-    'pill.competition':'竞技班','pill.fitness':'综合体能','pill.kids':'儿童班',
-    'pill.elite':'尖子班','pill.private':'私教课','pill.youth':'青少年班',
-    'pill.reserve':'竞技预备队','pill.kidsyouth':'儿童&青少年','pill.mixed':'混合课',
+    'pill.competition':'竞技精英班','pill.fitness':'综合体能','pill.kids':'儿童基础班',
+    'pill.elite':'竞技精英班','pill.private':'私教课','pill.youth':'儿童进阶班',
+    'pill.reserve':'竞技预备队','pill.kidsyouth':'基础&进阶班','pill.mixed':'青少年&成人班',
     'td.competitors':'全员竞技','td.selected':'教练选拔','td.contact':'请联系我们预约',
     'td.open':'全员开放','td.all':'全员',
     'age.5to7':'5 – 7 岁','age.8to11':'8 – 11 岁','age.12plus':'12岁以上 &amp; 成人',
@@ -2301,7 +2301,17 @@ var mediaItems = [
 ];
 var currentIndex = 0;
 
+function _closeModalUI() {
+  document.getElementById('media-modal').classList.remove('open');
+  document.getElementById('modal-video-iframe').src = '';
+  document.getElementById('modal-photo-img').src = '';
+  document.getElementById('modal-video-wrap').style.height = '';
+  document.getElementById('modal-inner').style.maxWidth = '920px';
+  document.body.style.overflow = '';
+}
+
 function openItem(i) {
+  var wasOpen = document.getElementById('media-modal').classList.contains('open');
   currentIndex = i;
   var item = mediaItems[i];
   var wrap = document.getElementById('modal-video-wrap');
@@ -2328,6 +2338,7 @@ function openItem(i) {
   }
   document.getElementById('media-modal').classList.add('open');
   document.body.style.overflow = 'hidden';
+  if (!wasOpen) history.pushState({modal: true}, '');
 }
 
 function navigate(dir) {
@@ -2346,13 +2357,16 @@ function openVideo(id, isShorts) {
 }
 
 function closeModal() {
-  document.getElementById('media-modal').classList.remove('open');
-  document.getElementById('modal-video-iframe').src = '';
-  document.getElementById('modal-photo-img').src = '';
-  document.getElementById('modal-video-wrap').style.height = '';
-  document.getElementById('modal-inner').style.maxWidth = '920px';
-  document.body.style.overflow = '';
+  if (!document.getElementById('media-modal').classList.contains('open')) return;
+  _closeModalUI();
+  history.back();
 }
+
+window.addEventListener('popstate', function() {
+  if (document.getElementById('media-modal').classList.contains('open')) {
+    _closeModalUI();
+  }
+});
 
 function handleModalClick(e) {
   if (e.target === document.getElementById('media-modal')) closeModal();
